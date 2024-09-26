@@ -1,6 +1,11 @@
+@font-face {
+  font-family: 'Minecraft';
+  src: url('Minecraft.ttf');
+  font-style: normal;
+}
 body 
 {
-    font-family: monospace;
+    font-family: Minecraft;
     background-color: white;
     margin: 0;
     padding: 0;
@@ -25,11 +30,26 @@ h2
 }
 .AboutMe
 {
+    text-align: right;
     background-color: white;
     height: 20%;
     color:black;
     font-size: 40px;
-    text-align: right;
     margin-right: 10%;
     margin-top: 5%
+}
+.WindowsTitle
+{
+    border-bottom: 3px solid aqua;
+    padding: 5px;
+}
+.WindowsBox
+{
+    width: fit-content;
+    border-radius: 10px;
+    border:3px solid aqua;
+}
+.WindowsContent
+{
+
 }
