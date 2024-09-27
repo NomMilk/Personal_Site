@@ -42,7 +42,7 @@ h2
 .WindowsTitle
 {
     text-align: right;
-    border-bottom: 3px black; 
+    border-bottom: 3px solid var(--border-color); 
     padding: 5px;
 }
 .WindowsBox
@@ -53,5 +53,5 @@ h2
 }
 .WindowsContent
 {
-
+    margin: 5%
 }
