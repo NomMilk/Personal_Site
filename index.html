@@ -4,43 +4,59 @@
     <link href="style.css" type="text/css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src = "Scripts.js"></script>
+    <script src="Scripts.js" defer></script> <!-- Link the external JavaScript file -->
 </head>
 <body>
     <header>
         <h4>Homan Qiu</h4>
     </header>
     <main>
-        <div class = "WindowsBox" style = "margin-left: 400px; margin-top: 50px; height: 800px; width: 1300px;">
-            <div class = "WindowsTitle">
-                Introduction
+        <template id="Windows">
+            <div class="WindowsBox" style="margin-left: 400px; margin-top: 50px; height: 800px; width: 1300px;">
+                <div class="WindowsTitle">Introduction</div>
+                <div class="WindowsContent">Information goes here</div>
             </div>
-            <div class = "WindowsContent">
-                Informationfja339093j03f90fj939023fj0fj92303fj9290320932j90
-            </div>
+        </template>
+
+        <!-- About_Me html -->
+        <div id = "About_Me_HTML" style = "display: none">
+            Hi, Welcome to my website. <br>
+            I mainly work on video games.
         </div>
-        <div class = "WindowsBox" style = "margin-left: 1250px; width: 550px">
-            <div class = "WindowsTitle">
-                Contact
-            </div>
-            <div class = "WindowsContent">
-                Phone-number = 626-828-9913 <br>
-                Email = Thehuiq2006@gmail.com <br>
-            </div>
-        </div>
-        <div class = "WindowsBox" style = "margin-left: 100px; height: 800px; width: 200px;">
-            <div class = "WindowsTitle">
-                My_Website 
-            </div>
-            <div class = "WindowsContent">
-                <button onclick = "SwitchPage(0)" class = "button" id = "About_Me">
-                    >Drugs
-                </button><br>
-                <button onclick = "SwitchPage(1)" class = "button" id = "Projects">
-                    >Tea
-                </button><br>
-            </div>
-        </div>
+        <!-- End of html -->
+
+        <div id="windowsContainer"></div>
+
+        <script>
+            window.onload = function() {
+                createWindow(
+                    'Main_Page',
+                    `
+                    Welcome to my website.
+                    `,
+                    350, 50, 1300, 800
+                );
+
+                createWindow(
+                    'Contact',
+                    `
+                    Phone-number = 626-828-9913 <br>
+                    Email = Thehuiq2006@gmail.com
+                    `,
+                    1250, 20, 550, 300
+                );
+
+                createWindow(
+                    'My_Website',
+                    `
+                    <button onclick="switchPage('Main_Page', 'Hi, Welcome to my website. I mainly work on video games.')" class="button" id="About_Me">>About_Me</button><br>
+                    <button onclick="switchPage('Main_Page', 'Testing')" class="button" id="Projects">>Projects</button>
+                    <button onclick="switchPage('Main_Page', '10/2/24 - Finished up javascript, so code is much more cleaner.')" class="button" id="Projects">>Update_Logs</button>
+                    `,
+                    100, 30, 200, 800
+                );
+            };
+        </script>
     </main>
 </body>
 </html>
