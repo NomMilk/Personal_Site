@@ -7,9 +7,10 @@
 :root
 {
     --bg-color: rgb(187, 235, 206);
-    --border-color: rgb(47, 148, 97);
+    --border-color: rgb(38, 132, 139);
     --title-color: rgb(128, 185, 168);
     --text-color: rgb(19, 78, 78);
+    --hover-color: rgb(48, 37, 110);
 
     --rounded-amount: 10px;
 }
@@ -20,7 +21,10 @@ body
     margin-right: auto;
     color: var(--text-color);
     font-family: Minecraft;
-    background-color: white;
+    background-image: url("balls.png");
+    background-repeat: repeat;
+    background-size: cover;
+    image-rendering: pixelated;
 
     overflow-x: hidden;
     overflow-y: hidden;
@@ -29,7 +33,6 @@ h4
 {
     font-size: 10px;
     text-align: right;
-    margin-right: 10px;
 }
 .button
 {
@@ -38,6 +41,10 @@ h4
     background: none;
     font-family: Minecraft;
     font-size: 20px;
+}
+.button:hover
+{
+    color:var(--hover-color);
 }
 .WindowsTitle
 {

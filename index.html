@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h4>Homan Qiu</h4>
+        <h4 style = "margin-right: -20px;">Homan Qiu</h4>
     </header>
     <main>
         <template id="Windows">
@@ -23,13 +23,19 @@
             Hi, Welcome to my website. <br>
             I mainly work on video games.
         </div>
-        <!-- End of html -->
 
+        <!-- Update_Logs html -->
+        <div id = "Update_Logs_HTML" style = "display: none">
+            10/2/24 - Finished up javascript, <br> so code is much more cleaner.
+        </div>
+        <!-- End of html -->
         <div id="windowsContainer"></div>
 
         <script>
-            window.onload = function() {
-                createWindow(
+            window.onload = function()
+            {
+                createWindow
+                (
                     'Main_Page',
                     `
                     Welcome to my website.
@@ -37,24 +43,26 @@
                     350, 50, 1300, 800
                 );
 
-                createWindow(
+                createWindow
+                (
                     'Contact',
                     `
                     Phone-number = 626-828-9913 <br>
                     Email = Thehuiq2006@gmail.com
                     `,
-                    1250, 20, 550, 300
+                    1250, 20, 550, 150
                 );
 
-                createWindow(
+                createWindow
+                (
                     'My_Website',
                     `
-                    <button onclick="switchPage('Main_Page', 'Hi, Welcome to my website. I mainly work on video games.')" class="button" id="About_Me">>About_Me</button><br>
-                    <button onclick="switchPage('Main_Page', 'Testing')" class="button" id="Projects">>Projects</button>
-                    <button onclick="switchPage('Main_Page', 'Still working on this ;-;')" class="button" id="Projects">>Customize</button>
-                    <button onclick="switchPage('Main_Page', '10/2/24 - Finished up javascript, so code is much more cleaner.')" class="button" id="Projects">>Update_Logs</button>
+                    <button onclick="switchPage('Main_Page', document.getElementById('About_Me_HTML').innerHTML)" class="button" id="About_Me">>About_Me</button><br>
+                    <button onclick="switchPage('Main_Page', 'WIP')" class="button" id="Projects">>Projects</button>
+                    <button onclick="switchPage('Main_Page', 'WIP')" class="button" id="Projects">>Customize</button>
+                    <button onclick="switchPage('Main_Page', document.getElementById('Update_Logs_HTML').innerHTML)" class="button" id="Projects">>Update_Logs</button>
                     `,
-                    100, 30, 200, 800
+                    60, 30, 250, 800
                 );
             };
         </script>
