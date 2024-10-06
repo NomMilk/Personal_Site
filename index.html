@@ -7,6 +7,11 @@
     <script src="Scripts.js" defer></script> <!-- Link the external JavaScript file -->
 </head>
 <body>
+    <noscript>
+        <h1>
+            pls enable javascript ;-;
+        </h1>
+    </noscript>
     <header>
         <h4 style = "margin-right: -20px;">Homan Qiu</h4>
     </header>
@@ -22,6 +27,7 @@
         <div id = "About_Me_HTML" style = "display: none">
             Hi, Welcome to my website. <br>
             I mainly work on video games.
+            <img src = "SiteImages/Me/blink.jpg" alt = "Image of me ._." style = "height: 500px; width: auto; margin-left:500px; margin-top:20px;">
         </div>
 
         <!-- Update_Logs html -->
@@ -42,6 +48,7 @@
                     `,
                     350, 50, 1300, 800
                 );
+                switchPage('Main_Page', document.getElementById('About_Me_HTML').innerHTML)
 
                 createWindow
                 (
