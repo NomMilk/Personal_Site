@@ -8,17 +8,16 @@
 {
     --bg-color: rgb(187, 235, 206);
     --border-color: rgb(38, 132, 139);
+    --border-size: 0.2vw;
     --title-color: rgb(128, 185, 168);
     --text-color: rgb(19, 78, 78);
     --hover-color: rgb(48, 37, 110);
 
-    --rounded-amount: 10px;
+    --rounded-amount: 0vw;
 }
 body 
 {
-    width: 1800px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0;
     color: var(--text-color);
     font-family: Minecraft;
     background-image: url("balls.png");
@@ -31,7 +30,8 @@ body
 }
 h4
 {
-    font-size: 10px;
+    font-size: 0.5vw;
+    margin-right: 1.2vw;
     text-align: right;
 }
 .button
@@ -40,7 +40,9 @@ h4
     border: none;
     background: none;
     font-family: Minecraft;
-    font-size: 20px;
+    font-size: 1.2vw;
+    padding-inline: 0.5vw;
+    padding-block: 0.2vw;
 }
 .button:hover
 {
@@ -52,20 +54,22 @@ h4
     border-top-right-radius: calc(var(--rounded-amount)/2);
     background-color: var(--title-color);
     text-align: right;
-    font-size: 20px;
-    border-bottom: 3px solid var(--border-color); 
-    padding: 5px;
+    font-size: 1.2vw;
+    border-bottom: var(--border-size) solid var(--border-color); 
+    padding: 0.2vw;
+    padding-top:0.3vw;
 }
 .WindowsBox
 {
     position: absolute;
     width: fit-content;
     border-radius: var(--rounded-amount);
-    border:3px solid var(--border-color);
+    border:var(--border-size) solid var(--border-color);
     background-color: var(--bg-color);
+    min-height:20%
 }
 .WindowsContent
 {
-    font-size: 30px;
-    margin: 20px
+    font-size: 1.5vw;
+    margin: 1.2vw;
 }

@@ -18,7 +18,7 @@ function switchPage(title, content)
 
 
 
-function createWindow(title, content, x, y, width, height)
+function createWindow(title, content, x, y, width, height, minheight)
 {
     const template = document.getElementById('Windows');
     const clone = template.content.cloneNode(true);
@@ -30,10 +30,10 @@ function createWindow(title, content, x, y, width, height)
     windowsContent.innerHTML = content;
 
     const windowsBox = clone.querySelector('.WindowsBox');
-    windowsBox.style.marginLeft = `${x}px`;
-    windowsBox.style.marginTop = `${y}px`;
-    windowsBox.style.width = `${width}px`;
-    windowsBox.style.height = `${height}px`;
+    windowsBox.style.marginLeft = `${x}%`;
+    windowsBox.style.marginTop = `${y}%`;
+    windowsBox.style.width = `${width}%`;
+    windowsBox.style.height = `${height}%`;
 
     document.getElementById('windowsContainer').appendChild(clone);
 }

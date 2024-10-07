@@ -12,9 +12,7 @@
             pls enable javascript ;-;
         </h1>
     </noscript>
-    <header>
-        <h4 style = "margin-right: -20px;">Homan Qiu</h4>
-    </header>
+    <h4>Homan Qiu</h4>
     <main>
         <template id="Windows">
             <div class="WindowsBox" style="margin-left: 400px; margin-top: 50px; height: 800px; width: 1300px;">
@@ -27,12 +25,13 @@
         <div id = "About_Me_HTML" style = "display: none">
             Hi, Welcome to my website. <br>
             I mainly work on video games.
-            <img src = "SiteImages/Me/blink.jpg" alt = "Image of me ._." style = "height: 500px; width: auto; margin-left:500px; margin-top:20px;">
+            <img src = "SiteImages/Me/blink.jpg" alt = "Image of me ._." style = "height: 25vw; width: 35vw; margin-left:30vw;">
         </div>
 
         <!-- Update_Logs html -->
         <div id = "Update_Logs_HTML" style = "display: none">
-            10/2/24 - Finished up javascript, <br> so code is much more cleaner.
+            10/2/24 - Finished up javascript, <br> so code is much more cleaner. <br><br>
+            10/6/24 - Spent money on the domain ;-; <br><br>
         </div>
         <!-- End of html -->
         <div id="windowsContainer"></div>
@@ -46,7 +45,7 @@
                     `
                     Welcome to my website.
                     `,
-                    350, 50, 1300, 800
+                    15, 3, 70, 80
                 );
                 switchPage('Main_Page', document.getElementById('About_Me_HTML').innerHTML)
 
@@ -57,7 +56,7 @@
                     Phone-number = 626-828-9913 <br>
                     Email = Thehuiq2006@gmail.com
                     `,
-                    1250, 20, 550, 150
+                    65, 0, 30, 20
                 );
 
                 createWindow
@@ -69,7 +68,7 @@
                     <button onclick="switchPage('Main_Page', 'WIP')" class="button" id="Projects">>Customize</button>
                     <button onclick="switchPage('Main_Page', document.getElementById('Update_Logs_HTML').innerHTML)" class="button" id="Projects">>Update_Logs</button>
                     `,
-                    60, 30, 250, 800
+                    1.5, 0, 12, 70
                 );
             };
         </script>
