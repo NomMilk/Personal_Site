@@ -17,6 +17,11 @@
         <template id="Windows">
             <div class="WindowsBox" style="margin-left: 400px; margin-top: 50px; height: 800px; width: 1300px;">
                 <div class="WindowsTitle">Introduction</div>
+                <!--
+                <img src = "SiteImages/ExitButton.png" alt = "X" 
+                style = "position:absolute; right:0; height: 1.5vw; width: 1.5vw;
+                         margin-top: -2vw; margin-right: 0.5vw;"> 
+                -->
                 <div class="WindowsContent">Information goes here</div>
             </div>
         </template>
@@ -28,7 +33,9 @@
             My favorite game is <br>
             "Wuppo" made in 2017. <br>
             One of the greatest game of all times
-            <img src = "SiteImages/Me/blink.jpg" alt = "Image of me ._." style = "position:absolute; height: 25vw; width: 35vw; margin-left:5vw; margin-top: -2vw">
+            <img src = "SiteImages/Me/blink.jpg" alt = "Image of me ._." 
+            style = "position:absolute; height: auto; width: 35vw;
+                     margin-left:5vw; margin-top: -2vw;">
         </div>
 
         <!-- Update_Logs html -->
@@ -49,7 +56,7 @@
                     `
                     Welcome to my website.
                     `,
-                    15, 3, 70, 80
+                    20, 3, 70, 80
                 );
                 switchPage('Main_Page', document.getElementById('About_Me_HTML').innerHTML)
 
@@ -72,7 +79,7 @@
                     <button onclick="switchPage('Main_Page', 'WIP')" class="button" id="Projects">>Customize</button>
                     <button onclick="switchPage('Main_Page', document.getElementById('Update_Logs_HTML').innerHTML)" class="button" id="Projects">>Update_Logs</button>
                     `,
-                    1.5, 0, 12, 70
+                    6.5, 0, 12, 70
                 );
             };
         </script>
