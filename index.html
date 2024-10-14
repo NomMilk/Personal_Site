@@ -14,6 +14,7 @@
     </noscript>
     <h4>Homan Qiu</h4>
     <main>
+        <!-- Templates -->
         <template id="Windows">
             <div class="WindowsBox" style="margin-left: 400px; margin-top: 50px; height: 800px; width: 1300px;">
                 <div class="WindowsTitle">Introduction</div>
@@ -24,6 +25,10 @@
                 -->
                 <div class="WindowsContent">Information goes here</div>
             </div>
+        </template>
+        <template id="Projects">
+            <img src = "SiteImages/ProjectImages/" alt = "Image of Project" class = "ProjectImages">
+            <a href="url" class = "ProjectLinks">Text</a>
         </template>
 
         <!-- About_Me html -->
@@ -37,7 +42,14 @@
             style = "position:absolute; height: auto; width: 35vw;
                      margin-left:5vw; margin-top: -2vw;">
         </div>
+        <!-- Projects html -->
+        <div id = "Projects_HTML" style = "display: none">
+            <h1>Games:</h1><br>
+            <!-- Insert Project using JS-->
+            <script>
 
+            </script>
+        </div>
         <!-- Update_Logs html -->
         <div id = "Update_Logs_HTML" style = "display: none">
             10/2/24 - Finished up javascript, <br> so code is much more cleaner. <br><br>
@@ -75,7 +87,7 @@
                     'My_Website',
                     `
                     <button onclick="switchPage('Main_Page', document.getElementById('About_Me_HTML').innerHTML)" class="button" id="About_Me">>About_Me</button><br>
-                    <button onclick="switchPage('Main_Page', 'WIP')" class="button" id="Projects">>Projects</button>
+                    <button onclick="switchPage('Main_Page', document.getElementById('Projects_HTML').innerHTML)" class="button" id="Projects">>Projects</button>
                     <button onclick="switchPage('Main_Page', 'WIP')" class="button" id="Projects">>Customize</button>
                     <button onclick="switchPage('Main_Page', document.getElementById('Update_Logs_HTML').innerHTML)" class="button" id="Projects">>Update_Logs</button>
                     `,
