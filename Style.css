@@ -69,11 +69,34 @@ h4
     border-radius: var(--rounded-amount);
     border:var(--border-size) solid var(--border-color);
     background-color: var(--bg-color);
-    min-height: 20%
+    min-height: 20%;
+    overflow: hidden;
 }
 .WindowsContent
 {
     font-size: 1.5vw;
     margin: 1.2vw;
 }
-
+.ImageContainer
+{
+    width: 10vw;
+    height: 10vw;
+    overflow: hidden;
+}
+.ProjectImages
+{
+    height: 20vw;
+    width: auto;
+    transform: translate(-25%, -25%);
+}
+.ProjectContainer
+{
+    width: 10vw;
+    height: 13vw;
+    overflow: hidden;
+}
+.ProjectLinks
+{
+    margin-top: 5%;
+    font-size: 1vw;
+}

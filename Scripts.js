@@ -35,23 +35,3 @@ function createWindow(title, content, x, y, width, height)
 
     document.getElementById('windowsContainer').appendChild(clone);
 }
-
-function createProject()
-{
-    const template = document.getElementById('Projects');
-    const clone = template.content.cloneNode(true);
-    
-    //const windowsTitle = clone.querySelector('.WindowsTitle');
-    //const windowsContent = clone.querySelector('.WindowsContent');
-
-    //windowsTitle.textContent = title;
-    //windowsContent.innerHTML = content;
-
-    //const windowsBox = clone.querySelector('.WindowsBox');
-    //windowsBox.style.marginLeft = `${x}%`;
-    //windowsBox.style.marginTop = `${y}%`;
-    //windowsBox.style.width = `${width}%`;
-    //windowsBox.style.height = `${height}%`;
-
-    //document.getElementById('windowsContainer').appendChild(clone);
-}
