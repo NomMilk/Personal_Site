@@ -27,7 +27,19 @@
     background: url('SiteImages/Cursor/mouse.png') no-repeat center;
     background-size: contain;
 }
-
+.cursor_hover
+{
+    position: fixed;
+    width: 2vw;
+    height: 2vw; 
+    pointer-events: none;
+    background: url('SiteImages/Cursor/mousehover.png') no-repeat center;
+    background-size: contain;
+}
+.cursor_none
+{
+    background: none;
+}
 body 
 {
     width: 100vw;

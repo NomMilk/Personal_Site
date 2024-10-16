@@ -18,6 +18,12 @@
             const cursor = document.querySelector('.cursor');
             cursor.style.left = `${e.clientX - 10}px`;
             cursor.style.top = `${e.clientY - 10}px`;
+
+            if (parseInt(cursor.style.top) <= 0 || parseInt(cursor.style.left) <= 0) {
+                cursor.classList.add('cursor_none'); // Add the class to hide
+            } else {
+                cursor.classList.remove('cursor_none'); // Remove the class to show
+            }
         });
     </script>
 
