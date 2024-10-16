@@ -18,12 +18,6 @@
             const cursor = document.querySelector('.cursor');
             cursor.style.left = `${e.clientX - 10}px`;
             cursor.style.top = `${e.clientY - 10}px`;
-
-            if (parseInt(cursor.style.top) <= 0 || parseInt(cursor.style.left) <= 0) {
-                cursor.classList.add('cursor_none'); // Add the class to hide
-            } else {
-                cursor.classList.remove('cursor_none'); // Remove the class to show
-            }
         });
     </script>
 
@@ -58,6 +52,22 @@
                     </a>
                 </div>
             </div>
+            <div class = "ProjectContainer">
+                <div class = "ImageContainer">
+                    <img
+                    src = "SiteImages/ProjectImages/Arcade.png"
+                    alt = "Image of Project"
+                    class = "ProjectImages">
+                    <br>
+                </div>
+                <div class = "ProjectLinks">
+                    <a
+                    target = "_blank"
+                    href = "https://store.steampowered.com/app/2656350/Untitled_Rougelike_Arcade_Game/">
+                    Untitled Rougelike Arcade Game 
+                    </a>
+                </div>
+            </div>
         </template>
 
         <!-- About_Me html -->
@@ -82,13 +92,27 @@
                     src = "SiteImages/ProjectImages/Gruty.jpg"
                     alt = "Image of Project"
                     class = "ProjectImages">
-                    <br>
                 </div>
                 <div class = "ProjectLinks">
                     <a
                     target = "_blank"
                     href = "https://creepercat1.itch.io/call-of-gruty-prologue">
                     Call of Gruty
+                    </a>
+                </div>
+            </div>
+            <div class = "ProjectContainer" style = "position: absolute; left: 12vw; top: 9.5vw">
+                <div class = "ImageContainer">
+                    <img
+                    src = "SiteImages/ProjectImages/Arcade.png"
+                    alt = "Image of Project"
+                    class = "ProjectImages">
+                </div>
+                <div class = "ProjectLinks">
+                    <a
+                    target = "_blank"
+                    href = "https://store.steampowered.com/app/2656350/Untitled_Rougelike_Arcade_Game/">
+                    URAG
                     </a>
                 </div>
             </div>
