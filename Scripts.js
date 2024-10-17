@@ -1,23 +1,22 @@
-function switchPage(title, content)
-{
+let cursor; // Declare cursor at a higher scope
+
+function switchPage(title, content) {
     const windowsContainer = document.getElementById('windowsContainer');
     const windowBoxes = windowsContainer.querySelectorAll('.WindowsBox');
 
-    for (let I = 0; I < windowBoxes.length; I++)
-    {
-        const windowTitleElement = windowBoxes[I].querySelector('.WindowsTitle'); 
+    for (let i = 0; i < windowBoxes.length; i++) {
+        const windowTitleElement = windowBoxes[i].querySelector('.WindowsTitle'); 
 
-        if (windowTitleElement.textContent === title)
-        {
-            const contentElement = windowBoxes[I].querySelector('.WindowsContent');
+        if (windowTitleElement.textContent === title) {
+            const contentElement = windowBoxes[i].querySelector('.WindowsContent');
             contentElement.innerHTML = content;
             break;
         }
     }
+    reloadLinks();
 }
 
-function createWindow(title, content, x, y, width, height)
-{
+function createWindow(title, content, x, y, width, height) {
     const template = document.getElementById('Windows');
     const clone = template.content.cloneNode(true);
 
@@ -34,4 +33,28 @@ function createWindow(title, content, x, y, width, height)
     windowsBox.style.height = `${height}%`;
 
     document.getElementById('windowsContainer').appendChild(clone);
+    reloadLinks();
 }
+
+function reloadLinks() {
+    const links = document.querySelectorAll('.button, .ProjectLinks, a'); // Ensure correct selector
+
+    links.forEach(link => {
+        link.addEventListener("mouseenter", () => {
+            cursor.classList.add("cursor_hover");
+        });
+
+        link.addEventListener("mouseleave", () => {
+            cursor.classList.remove("cursor_hover");
+        });
+    });
+}
+
+window.addEventListener('load', () => {
+    cursor = document.querySelector('.cursor'); // Assign cursor to the higher-scope variable
+
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = `${e.clientX - cursor.offsetWidth / 2}px`;
+        cursor.style.top = `${e.clientY - cursor.offsetHeight / 2}px`;
+    });
+});
