@@ -6,6 +6,8 @@
 }
 :root
 {
+    --text-selected:rgb(199, 245, 201);
+    --selected-color: rgb(19, 145, 145);
     --bg-color: rgb(187, 235, 206);
     --border-color: rgb(38, 132, 139);
     --border-size: 0.2vw;
@@ -127,4 +129,14 @@ a
 .ProjectLinks
 {
     margin-top: 5%;
+}
+::-moz-selection
+{
+    color: var(--text-selected);
+    background: var(--selected-color);
+}
+::selection
+{
+    color: var(--text-selected);
+    background: var(--selected-color);
 }
