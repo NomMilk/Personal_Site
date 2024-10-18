@@ -36,6 +36,18 @@ function createWindow(title, content, x, y, width, height) {
     reloadLinks();
 }
 
+function deleteWindow(title) {
+    const windowBox = document.getElementsByClassName('WindowsTitle');
+    
+    Array.from(windowBox).forEach((windowtitle) => {
+        if (windowtitle.innerHTML === title) {
+            windowtitle.parentNode.remove();
+        }
+    });
+
+    cursor.classList.remove("cursor_hover");
+}
+
 function reloadLinks() {
     const links = document.querySelectorAll('.button, .ProjectLinks, a'); // Ensure correct selector
 
