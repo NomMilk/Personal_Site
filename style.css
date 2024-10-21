@@ -6,6 +6,8 @@
 }
 :root
 {
+    --desktop-text:rgb(24, 28, 37);
+
     --text-selected:rgb(199, 245, 201);
     --selected-color: rgb(19, 145, 145);
     --bg-color: rgb(187, 235, 206);
@@ -54,6 +56,11 @@ body
 
     overflow-x: hidden;
     overflow-y: hidden;
+}
+h2
+{
+    text-align: center;
+    color: var(--desktop-text);
 }
 h4
 {
@@ -136,6 +143,21 @@ a
     margin-top: -2vw;
     width:2vw;
     height:2vw;
+}
+.Desktop
+{
+    padding: 2vw;
+    width: fit-content;
+    height: fit-content;
+}
+.DesktopIcons
+{
+    float: left;
+    width: 5vw;
+    height: 5vw;
+    cursor: none;
+    background: none;
+    border: 0vw;
 }
 ::-moz-selection
 {

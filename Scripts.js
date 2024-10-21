@@ -35,7 +35,6 @@ function createWindow(title, content, x, y, width, height) {
     document.getElementById('windowsContainer').appendChild(clone);
     reloadLinks();
 }
-/*
 function deleteWindow(title) {
     const windowBox = document.getElementsByClassName('WindowsTitle');
     
@@ -47,9 +46,8 @@ function deleteWindow(title) {
 
     cursor.classList.remove("cursor_hover");
 }
-*/
 function reloadLinks() {
-    const links = document.querySelectorAll('.button, .ProjectLinks, a'); // Ensure correct selector
+    const links = document.querySelectorAll('.button, .ProjectLinks, .DesktopIcons, a'); // Ensure correct selector
 
     links.forEach(link => {
         link.addEventListener("mouseenter", () => {
