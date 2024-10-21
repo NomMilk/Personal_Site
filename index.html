@@ -14,11 +14,24 @@
     </noscript>
 
     <main>
+        <div id="windowsContainer"></div>
         <div class = "Desktop">
             <button class = "DesktopIcons" style =
                 "
                 background-image: url(SiteImages/DesktopIcons/Folder.png);
                 background-size: contain;
+                "
+                onclick =
+                "
+                createWindow
+                (
+                    'Main_Page',
+                    `
+                    Welcome to my website.
+                    `,
+                    20, 3, 70, 80
+                );
+                switchPage('Main_Page', document.getElementById('About_Me_HTML').innerHTML)
                 "
             >
             </button>
@@ -135,8 +148,6 @@
             10/14/24 - Fixed some bugs and Projects Page (need to update it) <br><br>
             10/15/24 - Updated the cursor :D <br><br>
         </div>
-        <!-- End of html -->
-        <div id="windowsContainer"></div>
 
         <script>
             window.onload = function()
