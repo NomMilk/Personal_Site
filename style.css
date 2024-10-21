@@ -59,6 +59,7 @@ body
 }
 h2
 {
+    font-size: 1vw;
     text-align: center;
     color: var(--desktop-text);
 }
