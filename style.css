@@ -160,6 +160,13 @@ a
     background: none;
     border: 0vw;
 }
+.Overlay
+{
+    top: 0;
+    right: 0;
+    position: fixed;
+    z-index: 1;
+}
 ::-moz-selection
 {
     color: var(--text-selected);
