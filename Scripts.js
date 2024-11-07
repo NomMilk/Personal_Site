@@ -17,6 +17,8 @@ function switchPage(title, content) {
 }
 
 function createWindow(title, content, x, y, width, height) {
+    if(deleteWindow(title)) return;
+
     const template = document.getElementById('Windows');
     const clone = template.content.cloneNode(true);
 
@@ -37,14 +39,18 @@ function createWindow(title, content, x, y, width, height) {
 }
 function deleteWindow(title) {
     const windowBox = document.getElementsByClassName('WindowsTitle');
+    let Deleted = false;
     
     Array.from(windowBox).forEach((windowtitle) => {
         if (windowtitle.innerHTML === title) {
             windowtitle.parentNode.remove();
+            Deleted = true;
         }
     });
 
     cursor.classList.remove("cursor_hover");
+
+    return Deleted;
 }
 function reloadLinks() {
     const links = document.querySelectorAll('.button, .ProjectLinks, .DesktopIcons, a'); // Ensure correct selector
