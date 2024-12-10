@@ -19,6 +19,8 @@
     --title-color: rgb(128, 185, 168);
     --text-color: rgb(19, 78, 78);
 
+    --sidebar-color: rgb(34, 32, 52);
+    --sidebarborder-color: rgb(0,0,0);
     --rounded-amount: 0vw;
 }
 .cursor
@@ -159,6 +161,17 @@ a
     cursor: none;
     background: none;
     border: 0vw;
+}
+.Footer
+{
+    width: 100vw;
+    height: 1.5vw;
+    position: fixed;
+    background-color: var(--sidebar-color);
+    bottom: 0;
+    left: 0;
+
+    border-top: 0.5vw solid var(--sidebarborder-color);
 }
 .Overlay
 {
