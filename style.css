@@ -59,6 +59,7 @@ body
     overflow-x: hidden;
     overflow-y: hidden;
 }
+
 h2
 {
     font-size: 1vw;
@@ -75,6 +76,13 @@ a
 {
     cursor: none;
     color: var(--hover-color);
+}
+#current-date
+{
+    color: var(--border-color);
+    position: absolute;
+    bottom: 0.4vw;
+    right: 0.5vw;
 }
 .button
 {
@@ -171,7 +179,9 @@ a
     bottom: 0;
     left: 0;
 
-    border-top: 0.5vw solid var(--sidebarborder-color);
+    border-top: 0.3vw solid var(--sidebarborder-color);
+    padding-top: 0.2vw;
+    text-align: right;
 }
 .Overlay
 {

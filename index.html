@@ -77,7 +77,15 @@
             </button>
             <h2>Updates</h2>
 
-            <div class="Footer"></div>
+            <div class="Footer">
+                <div id = "current-date"></div>
+                <script>
+                    const currentDate = new Date();
+                    const formattedDate = currentDate.toISOString().split('T')[0];
+
+                    document.getElementById('current-date').textContent = formattedDate;
+                </script>
+            </div>
         </div>
          
         <!-- Templates -->
