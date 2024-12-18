@@ -52,6 +52,7 @@ function deleteWindow(title) {
 
     return Deleted;
 }
+
 function reloadLinks() {
     const links = document.querySelectorAll('.button, .ProjectLinks, .DesktopIcons, a'); // Ensure correct selector
 
