@@ -13,6 +13,7 @@ function switchPage(title, content) {
             break;
         }
     }
+    reloadLinks_M();
     reloadLinks();
 }
 
@@ -35,6 +36,7 @@ function createWindow(title, content, x, y, width, height) {
     windowsBox.style.height = `${height}%`;
 
     document.getElementById('windowsContainer').appendChild(clone);
+    reloadLinks_M();
     reloadLinks();
 }
 function deleteWindow(title) {
@@ -63,6 +65,20 @@ function reloadLinks() {
 
         link.addEventListener("mouseleave", () => {
             cursor.classList.remove("cursor_hover");
+        });
+    });
+}
+
+function reloadLinks_M() {
+    const links = document.querySelectorAll('.WindowTitle'); // Ensure correct selector
+
+    links.forEach(link => {
+        link.addEventListener("mouseenter", () => {
+            cursor.classList.add("cursor_move");
+        });
+
+        link.addEventListener("mouseleave", () => {
+            cursor.classList.remove("cursor_move");
         });
     });
 }

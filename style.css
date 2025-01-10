@@ -38,6 +38,12 @@
     background: url('SiteImages/Cursor/mousehover.png') no-repeat center;
     background-size: contain;
 }
+
+.cursor_move
+{
+    background: url('SiteImages/Cursor/mousehand.png') no-repeat center;
+    background-size: contain;
+}
 .cursor_none
 {
     background: none;
