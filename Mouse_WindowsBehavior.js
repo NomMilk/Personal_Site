@@ -70,7 +70,7 @@ function reloadLinks() {
 }
 
 function reloadLinks_M() {
-    const links = document.querySelectorAll('.WindowTitle'); // Ensure correct selector
+    const links = document.querySelectorAll('.WindowsTitle'); // Ensure correct selector
 
     links.forEach(link => {
         link.addEventListener("mouseenter", () => {
