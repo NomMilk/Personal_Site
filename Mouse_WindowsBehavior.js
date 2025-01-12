@@ -1,4 +1,5 @@
-let cursor; // Declare cursor at a higher scope
+let cursor;
+let activeMouseMoveListener = null;
 
 function addToCursor(title) {
     const windowsContainer = document.getElementById('windowsContainer');
@@ -8,7 +9,31 @@ function addToCursor(title) {
         const windowTitleElement = windowBoxes[i].querySelector('.WindowsTitle'); 
 
         if (windowTitleElement.textContent === title) {
+
+            //idk how the fuck I did the property bullshit
+            if (!windowBoxes[i].hasOwnProperty('activeMouseMoveListener')) {
+                const activeMouseMoveListener = (e) => {
+                    windowBoxes[i].style.marginLeft = `${cursor.style.left}`;
+                    windowBoxes[i].style.marginTop = `${cursor.style.top}`;
+                };
+
+                document.addEventListener('mousemove', activeMouseMoveListener);
+                windowBoxes[i].activeMouseMoveListener = activeMouseMoveListener;
+            }
             break;
+        }
+    }
+}
+
+function removeFromCursor() {
+    const windowsContainer = document.getElementById('windowsContainer');
+    const windowBoxes = windowsContainer.querySelectorAll('.WindowsBox');
+
+    for (let i = 0; i < windowBoxes.length; i++) {
+        if (windowBoxes[i].hasOwnProperty('activeMouseMoveListener')) {
+            document.removeEventListener('mousemove', windowBoxes[i].activeMouseMoveListener);
+
+            delete windowBoxes[i].activeMouseMoveListener;
         }
     }
 }
@@ -78,12 +103,16 @@ function reloadLinks_M() {
             cursor.classList.remove("cursor_move");
         });
         
-        link.addEventListener("mousedown", () => {
+
+        link.addEventListener("mousedown", (e) => {
+            isMouseDown = true;
+            addToCursor(e.target.innerHTML);
             cursor.classList.add("cursor_hold");
         });
 
         link.addEventListener("mouseup", () => {
-            cursor.classList.remove("cursor_hold"); // Remove the class when mouse is released
+            removeFromCursor();
+            cursor.classList.remove("cursor_hold");
         });
     });
 }

@@ -1,7 +1,7 @@
 .cursor
 {
+    left: 100000000vw;
     position: absolute;
-    margin-top: 2vh;
     width: 2vw;
     height: 2vw; 
     pointer-events: none;
