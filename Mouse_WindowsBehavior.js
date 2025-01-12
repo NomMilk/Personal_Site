@@ -1,6 +1,6 @@
 let cursor; // Declare cursor at a higher scope
 
-function switchPage(title, content) {
+function addToCursor(title) {
     const windowsContainer = document.getElementById('windowsContainer');
     const windowBoxes = windowsContainer.querySelectorAll('.WindowsBox');
 
@@ -8,13 +8,9 @@ function switchPage(title, content) {
         const windowTitleElement = windowBoxes[i].querySelector('.WindowsTitle'); 
 
         if (windowTitleElement.textContent === title) {
-            const contentElement = windowBoxes[i].querySelector('.WindowsContent');
-            contentElement.innerHTML = content;
             break;
         }
     }
-    reloadLinks_M();
-    reloadLinks();
 }
 
 function createWindow(title, content, x, y, width, height) {
@@ -39,6 +35,7 @@ function createWindow(title, content, x, y, width, height) {
     reloadLinks_M();
     reloadLinks();
 }
+
 function deleteWindow(title) {
     const windowBox = document.getElementsByClassName('WindowsTitle');
     let Deleted = false;
@@ -79,6 +76,14 @@ function reloadLinks_M() {
 
         link.addEventListener("mouseleave", () => {
             cursor.classList.remove("cursor_move");
+        });
+        
+        link.addEventListener("mousedown", () => {
+            cursor.classList.add("cursor_hold");
+        });
+
+        link.addEventListener("mouseup", () => {
+            cursor.classList.remove("cursor_hold"); // Remove the class when mouse is released
         });
     });
 }

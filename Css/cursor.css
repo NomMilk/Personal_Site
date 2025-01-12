@@ -1,0 +1,31 @@
+.cursor
+{
+    position: absolute;
+    margin-top: 2vh;
+    width: 2vw;
+    height: 2vw; 
+    pointer-events: none;
+    background: url('/SiteImages/Cursor/mouse.png') no-repeat center;
+    background-size: contain;
+}
+.cursor_hover
+{
+    background: url('/SiteImages/Cursor/mousehover.png') no-repeat center;
+    background-size: contain;
+}
+
+.cursor_move
+{
+    background: url('/SiteImages/Cursor/mousehand.png') no-repeat center;
+    background-size: contain;
+}
+
+.cursor_hold
+{
+    background: url('/SiteImages/Cursor/mousehold.png') no-repeat center;
+    background-size: contain;
+}
+.cursor_none
+{
+    background: none;
+}
