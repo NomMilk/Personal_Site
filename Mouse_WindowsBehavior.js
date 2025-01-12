@@ -10,10 +10,23 @@ function addToCursor(title) {
 
         if (windowTitleElement.textContent === title) {
 
+            const marginLeft = parseFloat(windowBoxes[i].style.marginLeft) || 0;
+
+            let pre_cursorLeft = parseFloat(cursor.style.left) || 0;
+            let pre_parentWidth = cursor.offsetParent?.clientWidth || 0;
+            let pre_cursorLeftPercentage = (pre_cursorLeft / pre_parentWidth) * 100;
+
             //idk how the fuck I did the property bullshit
             if (!windowBoxes[i].hasOwnProperty('activeMouseMoveListener')) {
                 const activeMouseMoveListener = (e) => {
-                    windowBoxes[i].style.marginLeft = `${cursor.style.left}`;
+                    let cursorLeft = parseFloat(cursor.style.left) || 0;
+
+                    let parentWidth = cursor.offsetParent?.clientWidth || 0;
+                    let cursorLeftPercentage = (cursorLeft / parentWidth) * 100;
+
+                    let calculatedPosition = marginLeft + (cursorLeftPercentage - pre_cursorLeftPercentage);
+
+                    windowBoxes[i].style.marginLeft = `${calculatedPosition}%`;
                     windowBoxes[i].style.marginTop = `${cursor.style.top}`;
                 };
 
