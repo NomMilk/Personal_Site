@@ -1,5 +1,6 @@
 .cursor
 {
+    z-index: 10;
     left: 100000000vw;
     position: absolute;
     width: 2vw;

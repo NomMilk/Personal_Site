@@ -9,6 +9,7 @@ function addToCursor(title) {
         const windowTitleElement = windowBoxes[i].querySelector('.WindowsTitle'); 
 
         if (windowTitleElement.textContent === title) {
+            windowsContainer.appendChild(windowBoxes[i]);
 
             const marginLeft = parseFloat(windowBoxes[i].style.marginLeft) || 0;
 

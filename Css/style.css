@@ -95,6 +95,7 @@ a
 }
 .WindowsBox
 {
+    z-index: 1;
     position: absolute;
     width: fit-content;
     border-radius: var(--rounded-amount);
