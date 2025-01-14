@@ -12,7 +12,7 @@
     --selected-color: rgb(19, 145, 145);
     --bg-color: rgb(187, 235, 206);
     --border-color: rgb(38, 132, 139);
-    --border-size: 0.2vw;
+    --border-size: 0.25vw;
 
     --hover-color: rgb(48, 37, 110);
 
@@ -95,7 +95,7 @@ a
 }
 .WindowsBox
 {
-    z-index: 1;
+    z-index: 0;
     position: absolute;
     width: fit-content;
     border-radius: var(--rounded-amount);
@@ -162,7 +162,7 @@ a
     bottom: 0;
     left: 0;
 
-    border-top: 0.3vw solid var(--sidebarborder-color);
+    border-top: 0.25vw solid var(--sidebarborder-color);
     padding-top: 0.2vw;
     text-align: right;
 }
