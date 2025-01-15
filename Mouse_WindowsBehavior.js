@@ -116,10 +116,8 @@ function reloadLinks_M() {
         link.addEventListener("mouseleave", () => {
             cursor.classList.remove("cursor_move");
         });
-        
 
         link.addEventListener("mousedown", (e) => {
-            isMouseDown = true;
             addToCursor(e.target.innerHTML);
             cursor.classList.add("cursor_hold");
         });

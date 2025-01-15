@@ -3,7 +3,8 @@
 <head>
     <link href="Css/style.css" type="text/css" rel="stylesheet">
     <link href="Css/cursor.css" type="text/css" rel="stylesheet">
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="Mouse_WindowsBehavior.js" defer></script> <!-- Link the external JavaScript file -->
 </head>
@@ -89,11 +90,11 @@
                 "
                 createWindow
                 (
-                    'Update_Logs'
+                    'Boat_Rider'
                     ,
-                    document.getElementById('Update_Logs_HTML').innerHTML
+                    document.getElementById('Boat_Rider_HTML').innerHTML
                     ,
-                    20, 2, 15, 30
+                    30, 2, 28.5, 60
                 );
                 "
             >
@@ -223,6 +224,41 @@
             10/14/24 - Fixed some bugs and Projects Page (need to update it) <br><br>
             10/15/24 - Updated the cursor :D <br><br>
             1/11/25 - Back working on the site again, moveable windows<br><br>
+        </div>
+
+        <!--Boat Rider Game html-->
+        <div id = "Boat_Rider_HTML" style = "display: none">
+            <canvas id="unity-canvas" width=500 height=500 tabindex="-1" style="width: 500px; height: 500px; background: #231F20"></canvas>
+                <script src="/Build/BoatRiderTest.loader.js"></script>
+                <script>
+                if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+                    // Mobile device style: fill the whole browser client area with the game canvas:
+                    var meta = document.createElement('meta');
+                    meta.name = 'viewport';
+                    meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+                    document.getElementsByTagName('head')[0].appendChild(meta);
+
+                    var canvas = document.querySelector("#unity-canvas");
+                    canvas.style.width = "100%";
+                    canvas.style.height = "100%";
+                    canvas.style.position = "fixed";
+
+                    document.body.style.textAlign = "left";
+                }
+
+                createUnityInstance(document.querySelector("#unity-canvas"), {
+                    arguments: [],
+                    dataUrl: "Build/BoatRiderTest.data",
+                    frameworkUrl: "Build/BoatRiderTest.framework.js",
+                    codeUrl: "Build/BoatRiderTest.wasm",
+                    streamingAssetsUrl: "StreamingAssets",
+                    companyName: "DefaultCompany",
+                    productName: "BoatRider",
+                    productVersion: "1.0",
+                    matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+                    // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+                });
+                </script>
         </div>
 
         <script>
