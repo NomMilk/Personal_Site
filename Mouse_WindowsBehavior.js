@@ -53,7 +53,11 @@ function removeFromCursor() {
 }
 
 function createWindow(title, content, x, y, width, height) {
-    if(deleteWindow(title)) return;
+    if(deleteWindow(title))
+    {
+        createWindow(title, content, x, y, width, height);
+        return;
+    }
 
     const template = document.getElementById('Windows');
     const clone = template.content.cloneNode(true);
@@ -75,18 +79,28 @@ function createWindow(title, content, x, y, width, height) {
     reloadLinks();
 }
 
+//still need to make this for all the webgl game si'm gonn add
+//although this chatgippidy code's gonna work for now
 function deleteWindow(title) {
     const windowBox = document.getElementsByClassName('WindowsTitle');
     let Deleted = false;
-    
+
     Array.from(windowBox).forEach((windowtitle) => {
         if (windowtitle.innerHTML === title) {
+            if (windowtitle.innerHTML === "Boat_Rider") {
+                QuitBoatRider();
+            }
+
             windowtitle.parentNode.remove();
             Deleted = true;
         }
     });
 
-    cursor.classList.remove("cursor_hover");
+    if (typeof cursor !== "undefined") {
+        cursor.classList.remove("cursor_hover");
+    } else {
+        console.warn("Cursor element is not defined.");
+    }
 
     return Deleted;
 }

@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="Mouse_WindowsBehavior.js" defer></script> <!-- Link the external JavaScript file -->
 </head>
+
 <body>
     <noscript>
         <h1>
@@ -81,7 +82,7 @@
             </button>
             <h2>Updates</h2>
 
-            <button class = "DesktopIcons" style =
+            <button class = "DesktopIcons" id = "Boat_Rider_Game" style =
                 "
                 background-image: url(SiteImages/DesktopIcons/BoatRider.png);
                 background-size: contain;
@@ -224,42 +225,69 @@
             10/14/24 - Fixed some bugs and Projects Page (need to update it) <br><br>
             10/15/24 - Updated the cursor :D <br><br>
             1/11/25 - Back working on the site again, moveable windows<br><br>
+            1/16/25 - dude.. this took wayy to long, should've used Ifrmaes<br> anyways we've got a game now <br><br>
         </div>
 
         <!--Boat Rider Game html-->
         <div id = "Boat_Rider_HTML" style = "display: none">
-            <canvas id="unity-canvas" width=500 height=500 tabindex="-1" style="width: 500px; height: 500px; background: #231F20"></canvas>
-                <script src="/Build/BoatRiderTest.loader.js"></script>
-                <script>
+            <canvas id="unity-canvas" width=500 height=500 tabindex="-1" style="width: 500px; height: 500px; background: #231F20;"></canvas>
+        </div>
+        <!--Boat rider game req-->
+
+        <script src="/Build/BoatRider.loader.js"></script>
+        <script>
+            document.getElementById("Boat_Rider_Game").addEventListener("click", function () {
                 if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
                     // Mobile device style: fill the whole browser client area with the game canvas:
-                    var meta = document.createElement('meta');
-                    meta.name = 'viewport';
-                    meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-                    document.getElementsByTagName('head')[0].appendChild(meta);
-
+                    var meta = document.createElement("meta");
+                    meta.name = "viewport";
+                    meta.content =
+                        "width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes";
+                    document.getElementsByTagName("head")[0].appendChild(meta);
+        
                     var canvas = document.querySelector("#unity-canvas");
                     canvas.style.width = "100%";
                     canvas.style.height = "100%";
                     canvas.style.position = "fixed";
-
+        
                     document.body.style.textAlign = "left";
                 }
+        
+                // Create Unity instance and ensure it's ready before using it
+                var BoatRiderInstance;
 
                 createUnityInstance(document.querySelector("#unity-canvas"), {
                     arguments: [],
-                    dataUrl: "Build/BoatRiderTest.data",
-                    frameworkUrl: "Build/BoatRiderTest.framework.js",
-                    codeUrl: "Build/BoatRiderTest.wasm",
+                    dataUrl: "Build/BoatRider.data",
+                    frameworkUrl: "Build/BoatRider.framework.js",
+                    codeUrl: "Build/BoatRider.wasm",
                     streamingAssetsUrl: "StreamingAssets",
                     companyName: "DefaultCompany",
                     productName: "BoatRider",
                     productVersion: "1.0",
-                    matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-                    // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+                    matchWebGLToCanvasSize: false,
+                }).then((instance) => {
+                    // Store the instance in the variable once Unity is ready
+                    BoatRiderInstance = instance;
+                    console.log("Unity instance is ready!");
+                }).catch((error) => {
+                    console.error("Error loading Unity instance:", error);
                 });
-                </script>
-        </div>
+
+                // Function to call SendMessage after Unity is ready
+                function QuitBoatRider() {
+                    if (BoatRiderInstance) {
+                        BoatRiderInstance.SendMessage('GameHolder', 'Quit');
+                    } else {
+                        console.log("Unity instance not ready yet.");
+                    }
+                }
+
+                // Make the function globally available
+                window.QuitBoatRider = QuitBoatRider;
+
+            });
+        </script>
 
         <script>
             window.onload = function()
