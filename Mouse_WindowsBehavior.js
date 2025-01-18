@@ -87,8 +87,14 @@ function deleteWindow(title) {
 
     Array.from(windowBox).forEach((windowtitle) => {
         if (windowtitle.innerHTML === title) {
+            console.log("Removed Window");
             if (windowtitle.innerHTML === "Boat_Rider") {
-                QuitBoatRider();
+                try {
+                    window.QuitBoatRider();
+                    console.log("QuitBoatRider executed successfully.");
+                } catch (error) {
+                    console.error("Failed to execute QuitBoatRider:", error);
+                }
             }
 
             windowtitle.parentNode.remove();
@@ -103,6 +109,23 @@ function deleteWindow(title) {
     }
 
     return Deleted;
+}
+
+function updateWindows(title, content) {
+    const windowsContainer = document.getElementById('windowsContainer');
+    const windowBoxes = windowsContainer.querySelectorAll('.WindowsBox');
+
+    for (let i = 0; i < windowBoxes.length; i++) {
+        const windowTitleElement = windowBoxes[i].querySelector('.WindowsTitle'); 
+
+        if (windowTitleElement.textContent === title) {
+            const contentElement = windowBoxes[i].querySelector('.WindowsContent');
+            contentElement.innerHTML = content;
+            break;
+        }
+    }
+    reloadLinks_M();
+    reloadLinks();
 }
 
 function reloadLinks() {

@@ -6,7 +6,8 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="Mouse_WindowsBehavior.js" defer></script> <!-- Link the external JavaScript file -->
+    <script src="Mouse_WindowsBehavior.js" defer></script>
+    <script src="Wallet.js" defer></script>
 </head>
 
 <body>
@@ -102,6 +103,26 @@
             </button>
             <h2>Boat Rider</h2>
 
+            <button class = "DesktopIcons" style =
+                "
+                background-image: url(SiteImages/DesktopIcons/Wallet.png);
+                background-size: contain;
+                "
+                onclick =
+                "
+                createWindow
+                (
+                    'Wallet'
+                    ,
+                    document.getElementById('Wallet_HTML').innerHTML
+                    ,
+                    30, 2, 15, 30
+                );
+                "
+            >
+            </button>
+            <h2>Wallet</h2>
+
             <div class="Footer">
                 <div id = "current-date"></div>
                 <script>
@@ -123,40 +144,6 @@
                         </button>
                     </div>
                 <div class="WindowsContent">Information goes here</div>
-            </div>
-        </template>
-        <template id="Projects">
-            <div class = "ProjectContainer">
-                <div class = "ImageContainer">
-                    <img
-                    src = "SiteImages/ProjectImages/Gruty.jpg"
-                    alt = "Image of Project"
-                    class = "ProjectImages">
-                    <br>
-                </div>
-                <div class = "ProjectLinks">
-                    <a
-                    target = "_blank"
-                    href = "https://creepercat1.itch.io/call-of-gruty-prologue">
-                    Call of Gruty
-                    </a>
-                </div>
-            </div>
-            <div class = "ProjectContainer">
-                <div class = "ImageContainer">
-                    <img
-                    src = "SiteImages/ProjectImages/Arcade.png"
-                    alt = "Image of Project"
-                    class = "ProjectImages">
-                    <br>
-                </div>
-                <div class = "ProjectLinks">
-                    <a
-                    target = "_blank"
-                    href = "https://store.steampowered.com/app/2656350/Untitled_Rougelike_Arcade_Game/">
-                    Untitled Rougelike Arcade Game 
-                    </a>
-                </div>
             </div>
         </template>
 
@@ -289,10 +276,37 @@
             });
         </script>
 
+        <!--Wallet Html-->
+        <div id = "Wallet_HTML" style = "display: none">
+        </div>
+
+        <!--Wallet script-->
         <script>
-            window.onload = function()
+            function RefreshWallet()
             {
-               reloadLinks();
+                const coins = localStorage.getItem('coins');
+
+                if (coins !== null) {
+                    const walletDiv = document.getElementById('Wallet_HTML');
+                    
+                    walletDiv.textContent = `Coins: ${coins}`;
+                } else {
+                    console.error("No 'coins' item found in localStorage.");
+                }
+            } 
+        </script>
+
+        <script>
+            function runEveryFrame() {
+                RefreshWallet();
+
+                updateWindows('Wallet', document.getElementById('Wallet_HTML').innerHTML);
+                requestAnimationFrame(runEveryFrame);
+            }
+
+            window.onload = function() {
+                runEveryFrame();
+                reloadLinks();
             };
         </script>
     </main>
