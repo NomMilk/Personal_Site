@@ -300,9 +300,15 @@
             function runEveryFrame() {
                 RefreshWallet();
 
-                updateWindows('Wallet', document.getElementById('Wallet_HTML').innerHTML);
                 requestAnimationFrame(runEveryFrame);
             }
+
+            document.addEventListener('keyup', (event) => {
+                    if (event.code === 'Space') {
+                        updateWindows('Wallet', document.getElementById('Wallet_HTML').innerHTML);
+                        event.preventDefault();
+                    }
+            });
 
             window.onload = function() {
                 runEveryFrame();
