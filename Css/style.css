@@ -44,7 +44,8 @@ body
 h2
 {
     font-size: 1vw;
-    text-align: center;
+    text-align: top;
+    margin-top: 0vw;
     color: var(--desktop-text);
 }
 h4
@@ -138,11 +139,23 @@ a
     width:2vw;
     height:2vw;
 }
+.Align-side
+{
+    display: flex;
+    gap: 1vw;
+}
 .Desktop
 {
     padding: 2vw;
     width: fit-content;
     height: fit-content;
+}
+
+.DesktopIconWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
 }
 .DesktopIcons
 {
