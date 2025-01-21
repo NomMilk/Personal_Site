@@ -1,7 +1,7 @@
 let cursor;
 let activeMouseMoveListener = null;
 
-function addToCursor(title) {
+function DragableWindows(title) {
     const windowsContainer = document.getElementById('windowsContainer');
     const windowBoxes = windowsContainer.querySelectorAll('.WindowsBox');
 
@@ -155,7 +155,7 @@ function reloadLinks_M() {
         });
 
         link.addEventListener("mousedown", (e) => {
-            addToCursor(e.target.innerHTML);
+            DragableWindows(e.target.innerHTML);
             cursor.classList.add("cursor_hold");
         });
 
