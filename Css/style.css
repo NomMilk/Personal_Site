@@ -82,6 +82,15 @@ a
 {
     color:var(--hover-color);
 }
+.lfield
+{
+    background-color: var(--bg-color);
+    border: var(--border-size) solid var(--border-color);
+
+    color: var(--text-color);
+    font-family:Minecraft;
+    font-size: 1.5vw;
+}
 .WindowsTitle
 {
     border-top-left-radius: calc(var(--rounded-amount)/2);
