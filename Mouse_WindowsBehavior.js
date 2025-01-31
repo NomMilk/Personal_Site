@@ -76,6 +76,7 @@ function createWindow(title, content, x, y, width, height) {
 
     document.getElementById('windowsContainer').appendChild(clone);
     reloadLinks_M();
+    reloadLinks_I();
     reloadLinks();
 }
 
@@ -125,6 +126,7 @@ function updateWindows(title, content) {
         }
     }
     reloadLinks_M();
+    reloadLinks_I();
     reloadLinks();
 }
 
@@ -142,6 +144,22 @@ function reloadLinks() {
     });
 }
 
+//this is for the text icon (input)
+function reloadLinks_I() {
+    const links = document.querySelectorAll('.lfield'); // Ensure correct selector
+
+    links.forEach(link => {
+        link.addEventListener("mouseenter", () => {
+            cursor.classList.add("cursor_input");
+        });
+
+        link.addEventListener("mouseleave", () => {
+            cursor.classList.remove("cursor_input");
+        });
+    });
+}
+
+//this is for the click icon
 function reloadLinks_M() {
     const links = document.querySelectorAll('.WindowsTitle'); // Ensure correct selector
 

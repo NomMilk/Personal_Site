@@ -84,6 +84,7 @@ a
 }
 .lfield
 {
+    cursor: none;
     background-color: var(--bg-color);
     border: var(--border-size) solid var(--border-color);
 

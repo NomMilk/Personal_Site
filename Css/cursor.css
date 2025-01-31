@@ -26,6 +26,13 @@
     background: url('/SiteImages/Cursor/mousehold.png') no-repeat center;
     background-size: contain;
 }
+
+.cursor_input
+{
+    background: url('/SiteImages/Cursor/mouseline.png') no-repeat center;
+    background-size: contain;
+}
+
 .cursor_none
 {
     background: none;
