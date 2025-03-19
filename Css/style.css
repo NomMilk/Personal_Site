@@ -115,10 +115,15 @@ a
     min-height: 20%;
     overflow: hidden;
 }
+
+.WindowsWrapper
+{
+    margin: 1.2vw;
+}
+
 .WindowsContent
 {
     font-size: 1.5vw;
-    margin: 1.2vw;
 }
 .ImageContainer
 {
