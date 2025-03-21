@@ -22,6 +22,7 @@
     --sidebar-color: rgb(34, 32, 52);
     --sidebarborder-color: rgb(0,0,0);
     --rounded-amount: 0vw;
+	--scrollrounded-amount: 0.5vw;
 }
 body 
 {
@@ -106,7 +107,6 @@ a
 }
 .WindowsBox
 {
-    z-index: 0;
     position: absolute;
     width: fit-content;
     border-radius: var(--rounded-amount);
@@ -116,6 +116,17 @@ a
     overflow: hidden;
 }
 
+.WindowsScroll
+{
+	position: relative;
+	z-index: 5;
+	width: 1vw;
+	height: 10vh;
+	float: right;
+	border-radius: var(--scrollrounded-amount);
+	background-color: var(--border-color);
+}
+
 .WindowsWrapper
 {
     margin: 1.2vw;
@@ -123,6 +134,8 @@ a
 
 .WindowsContent
 {
+	position: relative;
+	z-index: 1;
     font-size: 1.5vw;
 }
 .ImageContainer
@@ -199,7 +212,6 @@ a
     top: 0;
     right: 0;
     position: fixed;
-    z-index: 1;
 }
 ::-moz-selection
 {

@@ -131,7 +131,7 @@ function updateWindows(title, content) {
 }
 
 function reloadLinks() {
-    const links = document.querySelectorAll('.button, .ProjectLinks, .DesktopIcons, a'); // Ensure correct selector
+    const links = document.querySelectorAll('.WindowsScroll ,.button, .ProjectLinks, .DesktopIcons, a'); // Ensure correct selector
 
     links.forEach(link => {
         link.addEventListener("mouseenter", () => {
