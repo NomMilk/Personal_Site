@@ -108,6 +108,7 @@ a
 .WindowsBox
 {
     position: absolute;
+	z-index: 1;
     width: fit-content;
     border-radius: var(--rounded-amount);
     border:var(--border-size) solid var(--border-color);
@@ -118,6 +119,8 @@ a
 
 .WindowsScroll
 {
+	margin-top: 0.5vh;
+	margin-right: 0.5vw;
 	position: relative;
 	z-index: 5;
 	width: 1vw;
@@ -127,13 +130,9 @@ a
 	background-color: var(--border-color);
 }
 
-.WindowsWrapper
-{
-    margin: 1.2vw;
-}
-
 .WindowsContent
 {
+    margin: 1.2vw;
 	position: relative;
 	z-index: 1;
     font-size: 1.5vw;

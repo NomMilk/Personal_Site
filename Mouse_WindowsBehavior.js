@@ -74,6 +74,9 @@ function createWindow(title, content, x, y, width, height) {
     windowsBox.style.width = `${width}%`;
     windowsBox.style.height = `${height}%`;
 
+    const windowsScroll = windowsBox.querySelector('.WindowsScroll');
+    windowsScroll.style.height = `${height}%`;
+
     document.getElementById('windowsContainer').appendChild(clone);
     reloadLinks_M();
     reloadLinks_I();
