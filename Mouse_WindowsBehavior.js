@@ -52,7 +52,7 @@ function removeFromCursor() {
     }
 }
 
-function createWindow(title, content, x, y, width, height) {
+function createWindow(title, content, x, y, width, height, Fixed = false) {
     if(deleteWindow(title))
     {
         createWindow(title, content, x, y, width, height);
@@ -73,9 +73,14 @@ function createWindow(title, content, x, y, width, height) {
     windowsBox.style.marginTop = `${y}%`;
     windowsBox.style.width = `${width}%`;
     windowsBox.style.height = `${height}%`;
-
+    
     const windowsScroll = windowsBox.querySelector('.WindowsScroll');
     windowsScroll.style.height = `${height}%`;
+
+    if (Fixed)
+    {
+        windowsScroll.style.height = 0;
+    }
 
     document.getElementById('windowsContainer').appendChild(clone);
     reloadLinks_M();
