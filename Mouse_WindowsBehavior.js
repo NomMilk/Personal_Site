@@ -74,15 +74,17 @@ function createWindow(title, content, x, y, width, height, Fixed = false) {
     windowsBox.style.width = `${width}%`;
     windowsBox.style.height = `${height}%`;
     
+    document.getElementById('windowsContainer').appendChild(clone);
     const windowsScroll = windowsBox.querySelector('.WindowsScroll');
-    windowsScroll.style.height = `${height}%`;
 
-    if (Fixed)
+    windowsScroll.style.height = `${(height/(windowsContent.scrollHeight * 0.5)) * 100}%`;
+
+    if (Fixed || (height / 100) * window.innerHeight >= windowsContent.scrollHeight)
     {
         windowsScroll.style.height = 0;
     }
-
-    document.getElementById('windowsContainer').appendChild(clone);
+    console.log(windowsContent.scrollHeight);
+    console.log((height / 100) * window.innerHeight);
     reloadLinks_M();
     reloadLinks_I();
     reloadLinks();
