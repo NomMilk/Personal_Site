@@ -1,6 +1,12 @@
 let cursor;
 let activeMouseMoveListener = null;
 
+let resizeTimeout;
+
+window.addEventListener("resize", () => {
+    console.log("test");
+});
+
 function DragableWindows(title) {
     const windowsContainer = document.getElementById('windowsContainer');
     const windowBoxes = windowsContainer.querySelectorAll('.WindowsBox');
@@ -77,7 +83,7 @@ function createWindow(title, content, x, y, width, height, Fixed = false) {
     document.getElementById('windowsContainer').appendChild(clone);
     const windowsScroll = windowsBox.querySelector('.WindowsScroll');
 
-    windowsScroll.style.height = `${(height/(windowsContent.scrollHeight * 0.5)) * 100}%`;
+    windowsScroll.style.height = `${(1 - (height/(windowsContent.scrollHeight))) * 100}%`;
 
     if (Fixed || (height / 100) * window.innerHeight >= windowsContent.scrollHeight)
     {
@@ -122,7 +128,7 @@ function deleteWindow(title) {
     return Deleted;
 }
 
-function updateWindows(title, content) {
+function updateWindows(title, content, scrollHeight = 0) {
     const windowsContainer = document.getElementById('windowsContainer');
     const windowBoxes = windowsContainer.querySelectorAll('.WindowsBox');
 
@@ -150,6 +156,16 @@ function reloadLinks() {
 
         link.addEventListener("mouseleave", () => {
             cursor.classList.remove("cursor_hover");
+        });
+
+        link.addEventListener("mousedown", (e) => {
+            if (link.classList.contains("WindowsScroll")) {
+                console.log("hi");
+            }
+        });
+
+        link.addEventListener("mouseup", () => {
+            removeFromCursor();
         });
     });
 }
