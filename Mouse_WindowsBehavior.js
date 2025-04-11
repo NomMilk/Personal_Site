@@ -1,11 +1,13 @@
 let cursor;
 let activeMouseMoveListener = null;
 
+/*
 let resizeTimeout;
 
 window.addEventListener("resize", () => {
     console.log("test");
 });
+*/
 
 function DragableWindows(title) {
     const windowsContainer = document.getElementById('windowsContainer');
@@ -19,9 +21,9 @@ function DragableWindows(title) {
 
             const marginLeft = parseFloat(windowBoxes[i].style.marginLeft) || 0;
 
-            let pre_cursorLeft = parseFloat(cursor.style.left) || 0;
-            let pre_parentWidth = cursor.offsetParent?.clientWidth || 0;
-            let pre_cursorLeftPercentage = (pre_cursorLeft / pre_parentWidth) * 100;
+            const pre_cursorLeft = parseFloat(cursor.style.left) || 0;
+            const pre_parentWidth = cursor.offsetParent?.clientWidth || 0;
+            const pre_cursorLeftPercentage = (pre_cursorLeft / pre_parentWidth) * 100;
 
             //idk how the fuck I did the property bullshit
             if (!windowBoxes[i].hasOwnProperty('activeMouseMoveListener')) {
@@ -45,6 +47,39 @@ function DragableWindows(title) {
     }
 }
 
+function ScrollWindows(title)
+{
+    const windowBoxes = windowsContainer.querySelectorAll('.WindowsBox');
+
+    for (let i = 0; i < windowBoxes.length; i++) {
+        const windowTitleElement = windowBoxes[i].querySelector('.WindowsTitle'); 
+
+        if (windowTitleElement.textContent === title) {
+            ScrollWheel = windowBoxes[i].querySelector('.WindowsScroll');
+            const marginTop = parseFloat(ScrollWheel.style.marginTop) || 0;
+        
+            const pre_cursorTop = parseFloat(cursor.style.top);
+            const pre_parentTop = cursor.offsetParent?.clientHeight || 0;
+            const pre_cursorTopPercentage = (pre_cursorTop / pre_parentTop) * 100;
+
+            if (!windowBoxes[i].hasOwnProperty('activeMouseMoveListener')) {
+                const activeMouseMoveListener = (e) => {
+                    let cursorTop = parseFloat(cursor.style.top);
+                    let parentHeight = cursor.offsetParent?.clientHeight || 0;
+                    let cursorTopPercentage = (cursorTop / parentHeight) * 100;
+
+                    let calculatedPosition = marginTop + cursorTopPercentage - pre_cursorTopPercentage;
+
+                    ScrollWheel.style.marginTop = `${calculatedPosition}%`;
+                };
+                document.addEventListener('mousemove', activeMouseMoveListener);
+                windowBoxes[i].activeMouseMoveListener = activeMouseMoveListener;
+            }
+            break;
+        }
+    }
+}
+
 function removeFromCursor() {
     const windowsContainer = document.getElementById('windowsContainer');
     const windowBoxes = windowsContainer.querySelectorAll('.WindowsBox');
@@ -58,7 +93,7 @@ function removeFromCursor() {
     }
 }
 
-function createWindow(title, content, x, y, width, height, Fixed = false) {
+function createWindow(title, content, x, y, width, height, Scroll = 0.4) {
     if(deleteWindow(title))
     {
         createWindow(title, content, x, y, width, height);
@@ -83,14 +118,9 @@ function createWindow(title, content, x, y, width, height, Fixed = false) {
     document.getElementById('windowsContainer').appendChild(clone);
     const windowsScroll = windowsBox.querySelector('.WindowsScroll');
 
-    windowsScroll.style.height = `${(1 - (height/(windowsContent.scrollHeight))) * 100}%`;
+    //windowsScroll.style.height = `${height/scroll}%`;
+    windowsScroll.style.height = `${0}%`;
 
-    if (Fixed || (height / 100) * window.innerHeight >= windowsContent.scrollHeight)
-    {
-        windowsScroll.style.height = 0;
-    }
-    console.log(windowsContent.scrollHeight);
-    console.log((height / 100) * window.innerHeight);
     reloadLinks_M();
     reloadLinks_I();
     reloadLinks();
@@ -160,7 +190,7 @@ function reloadLinks() {
 
         link.addEventListener("mousedown", (e) => {
             if (link.classList.contains("WindowsScroll")) {
-                console.log("hi");
+                ScrollWindows(e.target.parentNode.querySelector('.WindowsTitle').innerHTML);
             }
         });
 
