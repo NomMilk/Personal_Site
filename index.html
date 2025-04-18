@@ -6,7 +6,8 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/Mouse_WindowsBehavior.js" defer></script>
+    <script src="Scripts/Mouse_WindowsBehavior.js" defer></script>
+    <script src="Scripts/CoinsManager.js" defer></script>
 </head>
 
 <body>
@@ -223,7 +224,7 @@
 
         <!--Shopping html-->
         <div id = "Shopping_HTML" style = "display: none">
-            <button class = "button"> Food Theme: 100$ </button> <br>
+            <button class = "button" onclick = "RemoveCoins(1);"> Food Theme: 100$ </button> <br>
         </div>
 
         <!--Boat Rider Game html-->
@@ -291,22 +292,6 @@
         <div id = "Wallet_HTML" style = "display: none">
 			Coins: $0
         </div>
-
-        <!--Wallet script-->
-        <script>
-            function RefreshWallet()
-            {
-                const coins = localStorage.getItem('coins');
-
-                if (coins !== null) {
-                    const walletDiv = document.getElementById('Wallet_HTML');
-                    
-                    walletDiv.textContent = `Coins: ${coins}`;
-                } else {
-                    console.error("No 'coins' item found in localStorage.");
-                }
-            } 
-        </script>
 
         <!--Resume Html-->
         <div id = "Resume_HTML" style = "display: none">
@@ -406,7 +391,6 @@
         <script>
             function runEveryFrame() {
                 RefreshWallet();
-
                 requestAnimationFrame(runEveryFrame);
             }
 
