@@ -17,6 +17,7 @@ function RemoveCoins(_amount)
 	}
 
 	localStorage.setItem('coins', count);
+	RefreshWallet();
 	//walletDiv.textContent = `Coins: ${coins}`;
 	updateWindows('Wallet', document.getElementById('Wallet_HTML').innerHTML);
 	return true;

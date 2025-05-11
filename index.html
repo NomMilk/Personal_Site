@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="Scripts/Mouse_WindowsBehavior.js" defer></script>
     <script src="Scripts/CoinsManager.js" defer></script>
+    <script src="Scripts/Purchase.js" defer></script>
 </head>
 
 <body>
@@ -223,8 +224,8 @@
         </div>
 
         <!--Shopping html-->
-        <div id = "Shopping_HTML" style = "display: none">
-            <button class = "button" onclick = "RemoveCoins(100);"> Food Theme: 100$ </button> <br>
+        <div id="Shopping_HTML" style="display: none">
+            <button class="button" onclick="if(RemoveCoins(1)) ChangeTheme()"> Food Theme: 100$</button> <br>
         </div>
 
         <!--Boat Rider Game html-->
