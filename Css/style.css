@@ -61,6 +61,11 @@ a
     cursor: none;
     color: var(--hover-color);
 }
+img
+{
+    width: 100%;
+    height: auto;
+}
 #current-date
 {
     color: var(--border-color);
@@ -138,6 +143,7 @@ a
 	z-index: 1;
     font-size: 1.5vw;
 }
+
 .ImageContainer
 {
     width: 10vw;
