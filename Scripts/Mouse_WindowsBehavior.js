@@ -243,6 +243,22 @@ function reloadLinks_M() {
 window.addEventListener('load', () => {
     cursor = document.querySelector('.cursor'); // Assign cursor to the higher-scope variable
 
+    document.addEventListener('contextmenu', function(e) {
+        const parent = cursor.offsetParent || document.body;
+        const percentX = ((e.clientX - cursor.offsetWidth / 2) / parent.clientWidth) * 100;
+        const percentY = ((e.clientY - cursor.offsetHeight / 2) / parent.clientWidth) * 100;
+
+        createWindow
+        (
+            'Menu'
+            ,
+            "tewst"
+            ,
+            percentX, percentY, 10, 35
+        );
+        e.preventDefault();
+   });
+
     document.addEventListener('mousemove', (e) => {
         cursor.style.left = `${e.clientX - cursor.offsetWidth / 2}px`;
         cursor.style.top = `${e.clientY - cursor.offsetHeight / 2}px`;
