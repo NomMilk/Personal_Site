@@ -252,7 +252,7 @@ window.addEventListener('load', () => {
         (
             'Menu'
             ,
-            "tewst"
+            '<img src = "/SiteImages/Gifs/construction.gif">'
             ,
             percentX, percentY, 10, 35
         );

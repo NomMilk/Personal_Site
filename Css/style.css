@@ -42,7 +42,10 @@ body
     overflow-x: hidden;
     overflow-y: hidden;
 }
-
+h1
+{
+    font-size: 2vw;
+}
 h2
 {
     font-size: 1vw;
@@ -146,8 +149,8 @@ img
 
 .ImageContainer
 {
-    width: 10vw;
-    height: 10vw;
+    width: 8vw;
+    height: 8vw;
     overflow: hidden;
 }
 .ProjectImages
@@ -158,9 +161,8 @@ img
 }
 .ProjectContainer
 {
-    width: 10vw;
-    height: 13vw;
-    overflow: hidden;
+    width: 5vw;
+    height: 5vw;
 }
 .ProjectLinks
 {
