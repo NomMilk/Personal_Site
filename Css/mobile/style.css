@@ -1,0 +1,233 @@
+@font-face
+{
+    font-family: 'Minecraft';
+    src: url('/Minecraft.ttf');
+    font-style: normal;
+}
+:root
+{
+    --background-image:url("/SiteImages/balls.png");
+    --desktop-text:rgb(24, 28, 37);
+
+    --text-selected:rgb(199, 245, 201);
+    --selected-color: rgb(19, 145, 145);
+    --bg-color: rgb(187, 235, 206);
+    --border-color: rgb(38, 132, 139);
+    --border-size: 0.25vw;
+
+    --hover-color: rgb(48, 37, 110);
+
+    --title-color: rgb(128, 185, 168);
+    --text-color: rgb(19, 78, 78);
+
+    --sidebar-color: rgb(34, 32, 52);
+    --sidebarborder-color: rgb(0,0,0);
+    --rounded-amount: 0vw;
+	--scrollrounded-amount: 0.5vw;
+}
+body 
+{
+    width: 100vw;
+    height: 100vh;
+    cursor: none;
+
+    margin: 0;
+    color: var(--text-color);
+    font-family: Minecraft;
+    background-image: var(--background-image);
+    background-repeat: repeat;
+    background-size: cover;
+    image-rendering: pixelated;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+h1
+{
+    font-size: 10vw;
+}
+h2
+{
+    font-size: 5vw;
+    text-align: top;
+    margin-top: 0vw;
+    color: var(--desktop-text);
+}
+h4
+{
+    font-size: 3vw;
+    margin-right: 1.2vw;
+    text-align: right;
+}
+a
+{
+    cursor: none;
+    color: var(--hover-color);
+}
+img
+{
+    width: 100%;
+    height: auto;
+}
+#current-date
+{
+    color: var(--border-color);
+    position: absolute;
+    font-size: 5vw;
+    bottom: 0.5vw;
+    right: 0.5vw;
+}
+.button
+{
+    cursor: none;
+    color: var(--text-color);
+    border: none;
+    background: none;
+    font-family: Minecraft;
+    font-size: 1.2vw;
+    padding-inline: 0.5vw;
+    padding-block: 0.2vw;
+}
+.button:hover
+{
+    color:var(--hover-color);
+}
+.lfield
+{
+    cursor: none;
+    background-color: var(--bg-color);
+    border: var(--border-size) solid var(--border-color);
+
+    color: var(--text-color);
+    font-family:Minecraft;
+    font-size: 1.5vw;
+}
+.WindowsTitle
+{
+    border-top-left-radius: calc(var(--rounded-amount)/2);
+    border-top-right-radius: calc(var(--rounded-amount)/2);
+    background-color: var(--title-color);
+    text-align: left;
+    font-size: 4vw;
+    border-bottom: var(--border-size) solid var(--border-color); 
+    padding: 0.2vw;
+    padding-left: 0.5vw;
+    padding-top:0.5vw;
+}
+.WindowsBox
+{
+    position: absolute;
+	z-index: 1;
+    width: fit-content;
+    border-radius: var(--rounded-amount);
+    border:var(--border-size) solid var(--border-color);
+    background-color: var(--bg-color);
+    min-height: 20%;
+    overflow: hidden;
+}
+
+.WindowsScroll
+{
+	margin-top: 0.5vh;
+	margin-right: 0.5vw;
+	position: relative;
+	z-index: 5;
+	width: 1vw;
+	height: 10vh;
+	float: right;
+	border-radius: var(--scrollrounded-amount);
+	background-color: var(--border-color);
+}
+
+.WindowsContent
+{
+    margin: 1.2vw;
+	position: relative;
+	z-index: 1;
+    font-size: 1.5vw;
+}
+
+.ImageContainer
+{
+    width: 8vw;
+    height: 8vw;
+    overflow: hidden;
+}
+.ProjectImages
+{
+    height: 20vw;
+    width: auto;
+    transform: translate(-25%, -25%);
+}
+.ProjectContainer
+{
+    width: 5vw;
+    height: 5vw;
+}
+.ProjectLinks
+{
+    margin-top: 5%;
+}
+.ExitHolder
+{
+    float: right;
+    margin-top: -2vw;
+    width:2vw;
+    height:2vw;
+}
+.Align-side
+{
+    display: flex;
+    gap: 1vw;
+}
+.Desktop
+{
+    padding: 2vw;
+    width: fit-content;
+    height: fit-content;
+}
+
+.DesktopIconWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+}
+.DesktopIcons
+{
+    float: left;
+    width: 20vw;
+    height: 20vw;
+    cursor: none;
+    background: none;
+    border: 0vw;
+}
+.Footer
+{
+    width: 100vw;
+    height: 7vw;
+    position: fixed;
+    background-color: var(--sidebar-color);
+    bottom: 0;
+    left: 0;
+
+    border-top: 0.25vw solid var(--sidebarborder-color);
+    padding-top: 0.2vw;
+    text-align: right;
+}
+.Overlay
+{
+    top: 0;
+    right: 0;
+    position: fixed;
+}
+::-moz-selection
+{
+    color: var(--text-selected);
+    background: var(--selected-color);
+}
+::selection
+{
+    color: var(--text-selected);
+    background: var(--selected-color);
+}
