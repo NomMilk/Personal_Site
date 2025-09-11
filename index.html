@@ -34,14 +34,11 @@
                     "
                     onclick =
                     "
-                    createWindow
-                    (
-                        'Resume'
-                        ,
-                        document.getElementById('Resume_HTML').innerHTML
-                        ,
-                        20, 3, 30, 30
-                    );
+                        fetch('/DesktopItemHTML/Resume.html')
+                            .then(response => response.text())
+                            .then(data => {
+                            createWindow('Resume', data, 20, 3, 30, 30);
+                            });
                     "
                 >
                 </button>
@@ -157,128 +154,11 @@
                             X
                         </button>
                     </div>
-					<div class = "WindowsScroll"></div>
 					<div class="WindowsContent">Information goes here</div>
             </div>
         </template>
 
-        <!-- About_Me html -->
-        <div id = "About_Me_HTML" style = "display: none">
-            <h1> Welcome to my website! </h1><br>
-            Hi, My name is Homan Qiu. <br>
-            I like playing video games<br>
-            I view myself as a game developer. <br>
-            But, I'm also enjoy web development, <br>
-    	    and my most favorite site is
-            <a target = "_blank" href = "https://syrno.net"> syrno.net!</a> <br>
-            Oh, and here's my 
-            <a target = "_blank" href = "HomanQiu Resume.pdf"> Resume!</a> <br>
-
-            <img src = "/SiteImages/Gifs/fire.gif" style = "height: auto; width: 4vw">
-            <img src = "/SiteImages/Gifs/fire.gif" style = "height: auto; width: 4vw">
-            <img src = "/SiteImages/Gifs/SpinFish.gif" style = "height: auto; width: 10vw">
-            <img src = "/SiteImages/Gifs/fire.gif" style = "height: auto; width: 4vw">
-            <img src = "/SiteImages/Gifs/fire.gif" style = "height: auto; width: 4vw">
-
-            <img src = "/SiteImages/Me/blink.jpg" alt = "Image of me ._." 
-            style = "position:absolute; height: auto; width: 35vw;
-                     left:32vw; top: 16vw;">
-        </div>
-
-        <!-- Projects html -->
-        <div id = "Projects_HTML" style = "display: none">
-            <h1>Games:</h1>
-            <div class = "ProjectContainer">
-                <div class = "ImageContainer">
-                    <img
-                    src = "/SiteImages/ProjectImages/Gruty.jpg"
-                    alt = "Image of Project"
-                    class = "ProjectImages">
-                </div>
-                <div class = "ProjectLinks">
-                    <a
-                    target = "_blank"
-                    href = "https://creepercat1.itch.io/call-of-gruty-prologue">
-                    COG
-                    </a>
-                </div>
-            </div>
-            <div class = "ProjectContainer" style = "position: absolute; left: 10vw; top: 3.55vw">
-                <div class = "ImageContainer">
-                    <img
-                    src = "/SiteImages/ProjectImages/Arcade.png"
-                    alt = "Image of Project"
-                    class = "ProjectImages">
-                </div>
-                <div class = "ProjectLinks">
-                    <a
-                    target = "_blank"
-                    href = "https://store.steampowered.com/app/2656350/Untitled_Rougelike_Arcade_Game/">
-                    URAG
-                    </a>
-                </div>
-            </div>
-            <div class = "ProjectContainer" style = "position: absolute; left: 20vw; top: 3.55vw">
-                <div class = "ImageContainer">
-                    <img
-                    src = "/SiteImages/ProjectImages/Journey.jpg"
-                    alt = "Image of Project"
-                    class = "ProjectImages">
-                </div>
-                <div class = "ProjectLinks">
-                    <a
-                    target = "_blank"
-                    href = "https://josiahlomax.itch.io/a-journey-to-babylon">
-                    JTB
-                    </a>
-                </div>
-            </div>
-            <div style = "height: 4vw"></div>
-            <h1>Apps:</h1>
-            <div class = "ProjectContainer">
-                <div class = "ImageContainer">
-                    <img
-                    src = "/SiteImages/ProjectImages/flower.png"
-                    alt = "Image of Project"
-                    class = "ProjectImages">
-                </div>
-                <div class = "ProjectLinks">
-                    <a
-                    target = "_blank"
-                    href = "https://github.com/tranchung163/EchoVerse">
-                    EchoVerse
-                    </a>
-                </div>
-            </div>
-            <div style = "height: 4vw"></div>
-            <h1>Sites:</h1>
-            <a
-            target = "_blank"
-            href = "https://Hikari3.ch">
-            Co-founded Imageboard
-            </a>           
-        </div>
-
-        <!-- Update_Logs html -->
-        <div id = "Update_Logs_HTML" style = "display: none">
-            10/2/24 - Finished up javascript, <br> so code is much more cleaner. <br>
-            10/6/24 - Spent money on the domain ;-; <br>
-            10/8/24 - Slight update on the webpages <br>
-            10/14/24 - Fixed some bugs and Projects Page (need to update it) <br>
-            10/15/24 - Updated the cursor :D <br>
-            1/11/25 - Back working on the site again, moveable windows<br>
-            1/16/25 - dude.. this took wayy to long, should've used Ifrmaes<br> anyways we've got a game now <br>
-            1/20/25 - School's staring back up D: but I've made a folder<br>
-            4/6/25 - Still working on it, just a little more tired than before ;-;<br>
-            5/11/25 - finished making shopping, now you can buy stuff :D <br>
-        </div>
-
-        <!--Contacts html-->
-        <div id = "Contacts_HTML" style = "display: none">
-            Email: fish@hikari3.ch <br>
-            Phone: 626-828-9913
-        </div>
-
+        <!--These html are here because they ahve to deal with money-->
         <!--Shopping html-->
         <div id="Shopping_HTML" style="display: none">
             <button class="button" onclick="if (RemoveCoins(25)) { ChangeTheme(); PlaySound('/Sounds/ChaChing Muska666.mp3'); }">
@@ -350,101 +230,6 @@
         <!--Wallet Html-->
         <div id = "Wallet_HTML" style = "display: none">
 			Coins: $0
-        </div>
-
-        <!--Resume Html-->
-        <div id = "Resume_HTML" style = "display: none">
-            <div class = "Align-side">
-                <div class = "DesktopIconWrapper">
-                    <button class = "DesktopIcons" style =
-                        "
-                        background-image: url(/SiteImages/DesktopIcons/Paper.png);
-                        background-size: contain;
-                        "
-                        onclick =
-                        "
-                        createWindow
-                        (
-                            'About_Me'
-                            ,
-                            document.getElementById('About_Me_HTML').innerHTML
-                            ,
-                            20, 3, 70, 80
-                        );
-                        "
-                    >
-                    </button>
-                    <h2>About_Me</h2>
-                </div>
-            
-                <div class = "DesktopIconWrapper">
-                    <button class = "DesktopIcons" style =
-                        "
-                        background-image: url(/SiteImages/DesktopIcons/Paper.png);
-                        background-size: contain;
-                        "
-                        onclick =
-                        "
-                        createWindow
-                        (
-                            'Projects'
-                            ,
-                            document.getElementById('Projects_HTML').innerHTML
-                            ,
-                            10, 10, 70, 80
-                        );
-                        "
-                    >
-                    </button>
-                    <h2>Projects</h2>
-                </div>
-                
-                <div class = "DesktopIconWrapper">
-                    <button class = "DesktopIcons" style =
-                        "
-                        background-image: url(/SiteImages/DesktopIcons/Paper.png);
-                        background-size: contain;
-                        "
-                        onclick =
-                        "
-                        createWindow
-                        (
-                            'Update_Logs'
-                            ,
-                            document.getElementById('Update_Logs_HTML').innerHTML
-                            ,
-                            40, 2, 60, 70
-                        );
-                        "
-                    >
-                    </button>
-                    <h2>Updates</h2>
-                </div>
-
-                <div class = "DesktopIconWrapper">
-                    <button class = "DesktopIcons" style =
-                        "
-                        background-image: url(/SiteImages/DesktopIcons/Paper.png);
-                        background-size: contain;
-                        "
-                        onclick =
-                        "
-                        createWindow
-                        (
-                            'Contacts'
-                            ,
-                            document.getElementById('Contacts_HTML').innerHTML
-                            ,
-                            25, 5, 30, 20
-                        );
-                        "
-                    >
-                    </button>
-                    <h2>Contacts</h2>
-                </div>
-            </div>
-        </div>
-
         </div>
         <!--some weird stuff for this-->
         <script>

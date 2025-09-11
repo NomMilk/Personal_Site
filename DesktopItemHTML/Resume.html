@@ -1,0 +1,79 @@
+<div id = "Resume_HTML">
+    <div class = "Align-side">
+        <div class = "DesktopIconWrapper">
+            <button class = "DesktopIcons" style =
+                "
+                background-image: url(/SiteImages/DesktopIcons/Paper.png);
+                background-size: contain;
+                "
+                onclick =
+                "
+                    fetch('/DesktopItemHTML/About_Me.html')
+                        .then(response => response.text())
+                        .then(data => {
+                        createWindow('About_Me', data, 20, 3, 70, 80);
+                        });
+                "
+            >
+            </button>
+            <h2>About_Me</h2>
+        </div>
+    
+        <div class = "DesktopIconWrapper">
+            <button class = "DesktopIcons" style =
+                "
+                background-image: url(/SiteImages/DesktopIcons/Paper.png);
+                background-size: contain;
+                "
+                onclick =
+                "
+                    fetch('/DesktopItemHTML/Projects.html')
+                        .then(response => response.text())
+                        .then(data => {
+                            createWindow('Projects', data, 10, 10, 70, 80);
+                        });
+                "
+            >
+            </button>
+            <h2>Projects</h2>
+        </div>
+        
+        <div class = "DesktopIconWrapper">
+            <button class = "DesktopIcons" style =
+                "
+                background-image: url(/SiteImages/DesktopIcons/Paper.png);
+                background-size: contain;
+                "
+                onclick =
+                "
+                    fetch('/DesktopItemHTML/Update_Logs.html')
+                        .then(response => response.text())
+                        .then(data => {
+                        createWindow('Update_Logs', data, 40, 2, 60, 70);
+                        });
+                "
+            >
+            </button>
+            <h2>Updates</h2>
+        </div>
+
+        <div class = "DesktopIconWrapper">
+            <button class = "DesktopIcons" style =
+                "
+                background-image: url(/SiteImages/DesktopIcons/Paper.png);
+                background-size: contain;
+                "
+                onclick =
+                "
+                    fetch('/DesktopItemHTML/Contacts.html')
+                        .then(response => response.text())
+                        .then(data => {
+                        createWindow('Contacts', data, 25, 5, 30, 20);
+                        });
+                "
+            >
+            </button>
+                <h2>Contacts</h2>
+        </div>
+    </div>
+</div>
