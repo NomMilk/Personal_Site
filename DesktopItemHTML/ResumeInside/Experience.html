@@ -1,0 +1,22 @@
+<div id = "Experience_HTML">
+    <div class = "Align-side">
+        <div class = "DesktopIconWrapper">
+            <button class = "DesktopIcons" style =
+                "
+                background-image: url(/SiteImages/DesktopIcons/Paper.png);
+                background-size: contain;
+                "
+                onclick =
+                "
+                    fetch('/DesktopItemHTML/ResumeInside/ExperienceInside/Hikari3.html')
+                        .then(response => response.text())
+                        .then(data => {
+                            createWindow('Hikari3', data, 45, 15, 35, 35);
+                        });
+                "
+            >
+            </button>
+            <h2>Hikari3</h2>
+        </div>
+    </div>
+</div>

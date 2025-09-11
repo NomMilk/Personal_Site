@@ -126,6 +126,25 @@
                 </button>
                 <h2>Music</h2>
             </div>
+        
+            <div class = "DesktopIconWrapper" style = "grid-column: 20; grid-row:2;">
+                <button class = "DesktopIcons" style =
+                    "
+                    background-image: url(/SiteImages/DesktopIcons/Paper.png);
+                    background-size: contain;
+                    "
+                    onclick =
+                    "
+                        fetch('/DesktopItemHTML/ResumeInside/Update_Logs.html')
+                            .then(response => response.text())
+                            .then(data => {
+                            createWindow('Update_Logs', data, 40, 2, 60, 70);
+                            });
+                    "
+                >
+                </button>
+                <h2>Updates</h2>
+            </div>
 
             <div class="Footer">
                 <div id = "current-date"></div>

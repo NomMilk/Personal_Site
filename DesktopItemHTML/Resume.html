@@ -37,25 +37,26 @@
             </button>
             <h2>Projects</h2>
         </div>
-        
+
         <div class = "DesktopIconWrapper">
             <button class = "DesktopIcons" style =
                 "
-                background-image: url(/SiteImages/DesktopIcons/Paper.png);
+                background-image: url(/SiteImages/DesktopIcons/Folder.png);
                 background-size: contain;
                 "
                 onclick =
                 "
-                    fetch('/DesktopItemHTML/ResumeInside/Update_Logs.html')
+                    fetch('/DesktopItemHTML/ResumeInside/Experience.html')
                         .then(response => response.text())
                         .then(data => {
-                        createWindow('Update_Logs', data, 40, 2, 60, 70);
+                            createWindow('Experience', data, 10, 12, 35, 40);
                         });
                 "
             >
             </button>
-            <h2>Updates</h2>
+            <h2>Experience</h2>
         </div>
+
 
         <div class = "DesktopIconWrapper">
             <button class = "DesktopIcons" style =
@@ -73,7 +74,7 @@
                 "
             >
             </button>
-                <h2>Contacts</h2>
+            <h2>Contacts</h2>
         </div>
     </div>
 </div>
