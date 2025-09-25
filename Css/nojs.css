@@ -1,0 +1,42 @@
+@font-face
+{
+    font-family: 'Minecraft';
+    src: url('/Minecraft.ttf');
+    font-style: normal;
+}
+
+:root
+{
+    --white:#b8c2b9;
+    --black:#382b26;
+}
+
+body
+{
+    background-color: var(--white);
+    color: var(--black);
+    font-family: Minecraft;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+marquee
+{
+    font-size: 35px;
+    color:var(--black)
+}
+
+.websiteContainer
+{
+    width: auto;
+    height: auto;
+    margin: 70px;
+
+    border-style: dashed;
+    border-width: 5px;
+}
