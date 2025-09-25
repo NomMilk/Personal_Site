@@ -11,6 +11,26 @@
     --black:#382b26;
 }
 
+button
+{
+    color: var(--black);
+    background-color: var(--white);
+    font-family: Minecraft;
+    font-size: 25px;
+    margin: 10px;
+    border-style: solid;
+    border-color: var(--black);
+    border-width: 5px;
+    padding: 10px;
+}
+
+button:hover
+{
+    color: var(--white);
+    background-color: var(--black);
+    border-color: var(--white);
+}
+
 body
 {
     background-color: var(--white);
@@ -35,8 +55,10 @@ marquee
 {
     width: auto;
     height: auto;
-    margin: 70px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 20px;
 
-    border-style: dashed;
+    border-style: solid;
     border-width: 5px;
 }
