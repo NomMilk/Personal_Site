@@ -31,7 +31,7 @@ button:hover
     border-color: var(--white);
 }
 
-body
+html, body
 {
     background-color: var(--white);
     color: var(--black);
@@ -58,8 +58,56 @@ marquee
     margin-left: 60px;
     margin-right: 60px;
     margin-top: 20px;
-    overflow: scroll;
 
     border-style: solid;
     border-width: 5px;
+    overflow: hidden;
+}
+
+.HeaderButtons
+{
+    width: fit-content;
+}   
+
+.About_Text
+{
+    width: 500px;
+    padding: 20px;
+}
+
+.Contacts_Text
+{
+    width: 500px;
+    padding: 20px;
+}
+
+@media only screen and (max-width: 1219px)
+{
+    .HeaderButtons
+    {
+        width: fit-content;
+        margin: auto;
+    }   
+    .websiteContainer
+    {
+        height: 90vh;
+    }
+    .About_Text
+    {
+        width: fit-content;
+        margin: auto;
+    }
+    .Contacts_Text
+    {
+        display: none;
+    }
+    body
+    {
+        font-size: 50px;
+    }
+    button
+    {
+        font-size: 35px;
+    }
+
 }
