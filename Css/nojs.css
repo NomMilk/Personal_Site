@@ -99,7 +99,9 @@ marquee
     }
     .Contacts_Text
     {
-        display: none;
+        font-size: 50px;
+        text-align: center;
+        margin: auto;
     }
     body
     {
