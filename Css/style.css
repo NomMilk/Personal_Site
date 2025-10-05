@@ -97,7 +97,7 @@ img
 {
     color: var(--border-color);
     position: absolute;
-    font-size: 1vw;
+    font-size: 1.5vw;
     bottom: 0.2vw;
     right: 0.5vw;
 }
@@ -213,7 +213,7 @@ img
 .Footer
 {
     width: 100vw;
-    height: 1.5vw;
+    height: 2vw;
     position: fixed;
     background-color: var(--sidebar-color);
     bottom: 0;
@@ -223,6 +223,17 @@ img
     padding-top: 0.2vw;
     text-align: right;
 }
+
+.FriendsButton {
+    padding-left: 10px;
+}
+
+.FriendsButton img {
+  max-width: 5vw;
+  height: auto;
+  display: block;
+}
+
 .Overlay
 {
     top: 0;
