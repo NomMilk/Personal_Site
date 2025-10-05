@@ -97,7 +97,7 @@ img
 {
     color: var(--border-color);
     position: absolute;
-    font-size: 1.5vw;
+    font-size: 1.25vw;
     bottom: 0.2vw;
     right: 0.5vw;
 }
