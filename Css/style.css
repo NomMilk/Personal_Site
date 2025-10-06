@@ -24,7 +24,12 @@
     --sidebarborder-color: rgb(0,0,0);
     --rounded-amount: 0vw;
 }
-body 
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body
 {
     width: 100vw;
     height: 100vh;
@@ -153,9 +158,13 @@ img
 .WindowsContent
 {
     margin: 1.2vw;
+    height: fit-content;
 	position: relative;
 	z-index: 1;
     font-size: 1.5vw;
+    overflow: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .top-right-img {
