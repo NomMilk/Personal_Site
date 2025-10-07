@@ -11,6 +11,17 @@
     --black:#382b26;
 }
 
+::-moz-selection
+{
+    color: var(--white);
+    background: var(--black);
+}
+::selection
+{
+    color: var(--white);
+    background: var(--black);
+}
+
 button
 {
     color: var(--black);
@@ -54,10 +65,8 @@ marquee
 .websiteContainer
 {
     float: left;
-    width: 800px;
+    width: 45vw;
     height: 80vh;
-    margin-right: 60px;
-    margin-top: 20px;
 
     border-style: solid;
     border-width: 5px;
@@ -74,8 +83,13 @@ marquee
 
 .About_Text
 {
-    width: 500px;
-    padding: 20px;
+    width: 96vw;
+    padding: 2vw;
+}
+
+.desktop-element
+{
+    display: block;
 }
 
 .mobile-element
@@ -83,47 +97,19 @@ marquee
     display: none;
 }
 
-.Contacts_Text
-{
-    width: 500px;
-    padding: 20px;
-}
-
 @media only screen and (max-width: 1219px)
 {
-    .HeaderButtons
+    .desktop-element
     {
-        width: fit-content;
-        margin: auto;
-    }   
-    .websiteContainer
-    {
-        float: none;
-        margin: 0 auto;
-        height: 90vh;
-    }
-    .About_Text
-    {
-        width: fit-content;
-        margin: auto;
-    }
-    .Contacts_Text
-    {
-        font-size: 50px;
-        text-align: center;
-        margin: auto;
+        display: none;
     }
     .mobile-element
     {
-        display: flex;
-    }
-    body
-    {
-        font-size: 50px;
-    }
-    button
-    {
-        font-size: 35px;
+        display: block;
     }
 
+    .HeaderButtons
+    {
+        margin: auto;
+    }
 }
