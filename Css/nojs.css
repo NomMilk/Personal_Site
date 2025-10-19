@@ -44,6 +44,7 @@ button:hover
 
 html, body
 {
+    height: 100vh;
     background-color: var(--white);
     color: var(--black);
     font-family: Minecraft;
@@ -64,9 +65,10 @@ marquee
 
 .websiteContainer
 {
-    float: left;
     width: 45vw;
-    height: 80vh;
+    height: calc(95vh - 90px);
+
+    box-sizing: border-box;
 
     border-style: solid;
     border-width: 5px;
@@ -75,11 +77,6 @@ marquee
     scrollbar-width: none;
     overflow: scroll;
 }
-
-.HeaderButtons
-{
-    width: fit-content;
-}   
 
 .About_Text
 {
@@ -110,6 +107,7 @@ marquee
 
     .HeaderButtons
     {
+        width: fit-content;
         margin: auto;
     }
 }
