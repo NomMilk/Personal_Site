@@ -1,113 +1,13 @@
-@font-face
-{
-    font-family: 'Minecraft';
-    src: url('/Minecraft.ttf');
-    font-style: normal;
-}
-
-:root
-{
-    --white:#b8c2b9;
-    --black:#382b26;
-}
-
-::-moz-selection
-{
-    color: var(--white);
-    background: var(--black);
-}
-::selection
-{
-    color: var(--white);
-    background: var(--black);
-}
-
-button
-{
-    color: var(--black);
-    background-color: var(--white);
-    font-family: Minecraft;
-    font-size: 25px;
-    margin: 10px;
-    border-style: solid;
-    border-color: var(--black);
-    border-width: 5px;
-    padding: 10px;
-}
-
-button:hover
-{
-    color: var(--white);
-    background-color: var(--black);
-    border-color: var(--white);
-}
-
-html, body
-{
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    background-color: var(--white);
-    color: var(--black);
-    font-family: Minecraft;
-    font-size: 35px;
-
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    overflow: hidden;
 }
 
-body::-webkit-scrollbar {
-    display: none;
-}
-
-marquee
-{
-    color:var(--black)
-}
-
-.websiteContainer
-{
-    width: 45vw;
-    height: calc(95vh - 90px);
-
-    box-sizing: border-box;
-
-    border-style: solid;
-    border-width: 5px;
-
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    overflow: scroll;
-}
-
-.About_Text
-{
-    width: 96vw;
-    padding: 2vw;
-}
-
-.desktop-element
-{
-    display: block;
-}
-
-.mobile-element
-{
-    display: none;
-}
-
-@media only screen and (max-width: 1219px)
-{
-    .desktop-element
-    {
-        display: none;
-    }
-    .mobile-element
-    {
-        display: block;
-    }
-
-    .HeaderButtons
-    {
-        width: fit-content;
-        margin: auto;
-    }
+.box {
+    width: 500px;
+    height: 500px;
+    border: black solid 5px;
 }
