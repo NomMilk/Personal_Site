@@ -60,16 +60,26 @@
                     "
                     onclick =
                     "
-                    createWindow
-                    (
-                        'Boat_Rider'
-                        ,
-                        document.getElementById('Boat_Rider_HTML').innerHTML
-                        ,
-                        30, 2, 28.5, 65
-                        ,
-                        0 //scroll amount
-                    );
+                    const content = document.getElementById('Boat_Rider_HTML').innerHTML;
+                    const win = createWindow('Boat_Rider', content, 30, 2, 28.5, 65);
+
+                    // Wait for the window to be added to the DOM
+                    const unityContainer = win.querySelector('#UnityContainer'); // make sure your HTML has a div with this id
+                    if (unityContainer) {
+                        createUnityInstance(unityContainer, {
+                            dataUrl: 'Build/BoatRider.data',
+                            frameworkUrl: 'Build/BoatRider.framework.js',
+                            codeUrl: 'Build/BoatRider.wasm',
+                            streamingAssetsUrl: 'StreamingAssets',
+                            companyName: 'MyCompany',
+                            productName: 'BoatRider',
+                            productVersion: '1.0',
+                        }).then((unityInstance) => {
+                            console.log('Unity loaded', unityInstance);
+                        }).catch((err) => {
+                            console.error(err);
+                        });
+                    }
                     "
                 >
                 </button>
