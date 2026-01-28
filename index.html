@@ -63,9 +63,7 @@
                     const content = document.getElementById('Boat_Rider_HTML').innerHTML;
                     const win = createWindow('Boat_Rider', content, 30, 2, 28.5, 65);
 
-                    // Wait for the window to be added to the DOM
-                    const unityContainer = win.querySelector('#UnityContainer'); // make sure your HTML has a div with this id
-                    if (unityContainer) {
+                    if (win) {
                         createUnityInstance(unityContainer, {
                             dataUrl: 'Build/BoatRider.data',
                             frameworkUrl: 'Build/BoatRider.framework.js',
