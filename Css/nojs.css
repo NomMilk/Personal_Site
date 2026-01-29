@@ -2,10 +2,44 @@ body {
 	line-height: 1.6;
 
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
     overflow: hidden;
+
+    justify-content: center;
+    align-items: center;
+}
+
+ul
+{
+	list-style-type: none;
+	text-align: right;
+	padding-left: 0;
+
+	line-height: 2em;
+}
+
+button
+{
+	border: black solid 5px;
+	border-right: none;
+
+	background: none;
+
+	margin-left: 15px;
+	padding-right: 5px;
+	
+	transition: padding 0.2s ease, margin 0.2s ease;
+}
+
+button:hover
+{
+	margin-left: 0;
+	padding-right: 20px;
+}
+
+.centerObject
+{
+	display: flex;
 }
 
 .box {
