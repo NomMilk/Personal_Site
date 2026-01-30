@@ -1,3 +1,13 @@
+:root
+{
+	--center: 800px;
+}
+
+::selection {
+    background-color: #000000;
+    color: #ffffff;
+}
+
 body {
 	line-height: 1.6;
 
@@ -7,10 +17,17 @@ body {
 
     justify-content: center;
     align-items: center;
+	background: url("/SiteImages/Simplified/home.png");
+    background-position: bottom -300px center;
+    background-repeat: no-repeat;
+
+    image-rendering: pixelated;
 }
 
 ul
 {
+	margin-left: auto;
+	width: 100px;
 	list-style-type: none;
 	text-align: right;
 	padding-left: 0;
@@ -20,10 +37,9 @@ ul
 
 button
 {
+	background: white;
 	border: black solid 5px;
 	border-right: none;
-
-	background: none;
 
 	margin-left: 15px;
 	padding-right: 5px;
@@ -39,14 +55,35 @@ button:hover
 
 .centerObject
 {
+	width: var(--center);
 	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+	margin-right: 200px;
 }
 
 .box {
+	background: white;
 	padding: 10px;
     width: 500px;
     height: 500px;
     border: black solid 5px;
 
 	overflow: scroll;
+}
+
+.intro-header {
+	width: var(--center);
+    text-align: right;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.intro-bit
+{
+	width: var(--center);
+	text-align: right;
+	margin-top: 0;
+    margin-bottom: 15px;
 }
