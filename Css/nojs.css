@@ -60,6 +60,9 @@ button:hover
     flex-direction: row;
     flex-wrap: wrap;
 
+	justify-content: flex-end;
+	align-items: flex-start;
+
 	margin-right: 200px;
 }
 
@@ -67,7 +70,7 @@ button:hover
 	background: white;
 	padding: 10px;
     width: 500px;
-    height: 500px;
+    height: auto;
     border: black solid 5px;
 
 	overflow: scroll;
