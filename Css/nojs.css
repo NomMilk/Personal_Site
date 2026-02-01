@@ -1,11 +1,14 @@
 :root
 {
 	--center: 800px;
+
+	--black: #c62b69;
+	--white: #edf4ff;
 }
 
 ::selection {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: var(--black);
+    color: var(--white);
 }
 
 body {
@@ -19,7 +22,9 @@ body {
 
     justify-content: center;
     align-items: center;
-	background: url("/SiteImages/Simplified/home.png");
+	background: url("/SiteImages/Simplified/black/home.png");
+	background-color: var(--white);
+	color: var(--black);
     background-position: bottom -300px center;
     background-repeat: no-repeat;
 
@@ -39,9 +44,9 @@ ul
 
 a
 {
-	color: black;
-	background: white;
-	border: black solid 5px;
+	color: var(--black);
+	background: var(--white);
+	border: var(--black) solid 5px;
 	border-right: none;
 
 	padding: 1.5px 2px;
@@ -79,11 +84,11 @@ a:hover
 }
 
 .box {
-	background: white;
+	background: var(--white);
 	padding: 10px;
     width: 500px;
     height: auto;
-    border: black solid 5px;
+    border: var(--black) solid 5px;
 
 	overflow: scroll;
 }
@@ -93,6 +98,18 @@ a:hover
     text-align: right;
 	margin-top: 0;
 	margin-bottom: 0;
+}
+
+.me_cover
+{
+	width: 200px;
+	height: 180px;
+	background-image: url("/SiteImages/Simplified/black/me_black.png");
+}
+
+.me_cover:hover
+{
+	background-image: url("/SiteImages/Simplified/me.png");
 }
 
 .intro-bit
