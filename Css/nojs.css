@@ -11,8 +11,17 @@
     color: var(--white);
 }
 
+::-webkit-scrollbar-track {
+	background: var(--white);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--black);
+}
+
 body {
 	line-height: 1.6;
+	scrollbar-color: var(--black) var(--white);
 
     display: flex;
     height: 100vh;
