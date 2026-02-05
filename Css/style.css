@@ -253,6 +253,14 @@ img
     right: 0;
     position: fixed;
 }
+
+.ProjectPage
+{
+    width: 21vw;
+    margin-top: 0.4vw;
+    color: var(--text-color);
+}
+
 ::-moz-selection
 {
     color: var(--text-selected);
