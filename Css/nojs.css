@@ -74,6 +74,12 @@ a:hover
 	cursor: default;
 }
 
+iframe
+{
+	border: solid;
+	width: 95%;
+}
+
 .hideDecor
 {
 	text-decoration: none;
