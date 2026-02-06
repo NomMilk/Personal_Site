@@ -77,3 +77,15 @@ html {
 {
 	width: 40vw;
 }
+
+.FriendsButton img
+{
+	width: 88px;
+}
+
+.FriendsButton a
+{
+	padding: 0;
+	text-decoration: none;
+}
+

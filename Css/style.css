@@ -234,19 +234,6 @@ img
     text-align: right;
 }
 
-.FriendsButton {
-    padding-left: 0.5vw;
-}
-
-.FriendsButton img {
-  max-width: 5vw;
-  height: auto;
-  display: block;
-}
-
-.FriendsButton a a:hover {
-    border-bottom: none;
-}
 
 .Overlay
 {
@@ -260,6 +247,25 @@ img
     width: 21vw;
     margin-top: 0.4vw;
     color: var(--text-color);
+}
+
+.FriendsButton
+{
+	width: 21vw;
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap
+}
+
+.FriendsButton img
+{
+	width: 5vw;
+}
+
+.FriendsButton a {
+	text-decoration: none;
+	border: none;
+	display: inline-block;
 }
 
 ::-moz-selection
