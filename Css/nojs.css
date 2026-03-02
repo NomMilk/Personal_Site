@@ -137,21 +137,18 @@ iframe
 
 @media (orientation: portrait) and (max-width: 700px)
 {
-    body
-    {
-        background-size: contain;
-    }
-    .mobile-hide
-    {
-        display: none;
-    }
+	html
+	{
+		overflow: hidden;
+	}
+
     .intro-header
     {
         width: auto;
         height: auto;
         position: absolute;
         top: 20px;
-        right: 30px;
+        right: 20px;
     }
 
     .intro-bit
@@ -160,20 +157,22 @@ iframe
         width: auto;
         height: auto;
         top: 60px;
-        right: 30px;
+        right: 20px;
     }
 
     .centerObject
     {
+		width: auto;
         margin-top: 200px;
         margin-right: 0;
     }
 
     ul
     {
-        width: auto;
-        display: flex;
-        margin-top: 20px;
+        position: absolute;
+		display: flex;
+		left: 20px;
+		top: 20px;
         gap: 20px;
         padding: 0;
     }
@@ -193,10 +192,26 @@ iframe
 
     .box
     {
-        width: 90vw;
-        height: 70vh;
+		width: 80vw !important;
+		height: 60vh;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
     }
+
+    .mobile-hide
+    {
+        display: none;
+    }
+
 }
 
-
+@media (orientation: portrait) and (max-width: 420px)
+{
+	ul
+	{
+		display: none;
+	}
+}
 
