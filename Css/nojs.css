@@ -135,6 +135,57 @@ iframe
     margin-bottom: 15px;
 }
 
+@media (orientation: landscape) and (max-height: 500px)
+{
+    body
+    {
+        background: none;
+        background-color: var(--white);
+    }
+    a
+    {
+        margin: 0;
+        padding: 5px;
+        border: var(--black) solid 2px;
+    }
+    a:hover
+    {
+        margin: 0;
+        padding: 5px;
+    }
+    ul
+    {
+       position: absolute;
+		display: flex;
+		left: 20px;
+		top: 0px;
+        gap: 20px;
+        padding: 0;
+    }
+
+    .mobile-hide
+    {
+        display: none;
+    }
+    .box
+    {
+        width: 80vw !important;
+		height: 60vh;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+    }
+    .intro-header
+    {
+        display: none;
+    }
+    .intro-bit
+    {
+        display: none;
+    }
+}
+
 @media (orientation: portrait) and (max-width: 700px)
 {
 	html
