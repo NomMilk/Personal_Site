@@ -8,6 +8,24 @@
                 "
                 onclick =
                 "
+                    fetch('/DesktopItemHTML/ResumeInside/ProjectsInside/Le_Fishe.html')
+                        .then(response => response.text())
+                        .then(data => {
+                        createWindow('Le_Fishe', data, 25, 4, 35, 35);
+                        });
+                "
+            >
+            </button>
+            <h2 style = "font-size: 1vw;">LeFishe</h2>
+        </div>
+        <div class = "DesktopIconWrapper">
+            <button class = "DesktopIcons" style =
+                "
+                background-image: url(/SiteImages/DesktopIcons/Paper.png);
+                background-size: contain;
+                "
+                onclick =
+                "
                     fetch('/DesktopItemHTML/ResumeInside/ProjectsInside/Call_Of_Gruty.html')
                         .then(response => response.text())
                         .then(data => {
@@ -56,24 +74,25 @@
             </button>
             <h2>ArcGme</h2>
         </div>
-
-        <div class = "DesktopIconWrapper">
-            <button class = "DesktopIcons" style =
-                "
-                background-image: url(/SiteImages/DesktopIcons/Paper.png);
-                background-size: contain;
-                "
-                onclick =
-                "
-                    fetch('/DesktopItemHTML/ResumeInside/ProjectsInside/Echoverse.html')
-                        .then(response => response.text())
-                        .then(data => {
-                        createWindow('Echoverse', data, 25, 4, 35, 35);
-                        });
-                "
-            >
-            </button>
-                <h2>Echoverse</h2>
+    </div>
+        <div class = "Align-side">
+            <div class = "DesktopIconWrapper">
+                <button class = "DesktopIcons" style =
+                    "
+                    background-image: url(/SiteImages/DesktopIcons/Paper.png);
+                    background-size: contain;
+                    "
+                    onclick =
+                    "
+                        fetch('/DesktopItemHTML/ResumeInside/ProjectsInside/Echoverse.html')
+                            .then(response => response.text())
+                            .then(data => {
+                            createWindow('Echoverse', data, 25, 4, 35, 35);
+                            });
+                    "
+                >
+                </button>
+                    <h2>Echoverse</h2>
         </div>
     </div>
 </div>
